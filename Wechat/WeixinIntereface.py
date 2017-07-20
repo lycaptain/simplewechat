@@ -23,7 +23,7 @@ class WeixinInterface:
         echostr = data.echostr
         
         #自己的token
-        token = "41512241"
+        token = "simple"
         
         #字典序排序
         list = [token, timestamp, nonce]
