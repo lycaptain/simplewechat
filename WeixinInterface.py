@@ -46,21 +46,3 @@ class WeixinInterface:
         	toUser = xml.find("ToUserName").text
             return self.render.reply_text(fromUser, toUser, int(time.time()),content)
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-    
