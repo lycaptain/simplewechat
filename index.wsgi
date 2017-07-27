@@ -1,4 +1,4 @@
-#coding: UTF-8
+# coding: UTF-8
 import os
 
 import sae
@@ -16,4 +16,3 @@ render = web.template.render(templates_root)
 
 app = web.application(urls, globals()).wsgifunc()        
 application = sae.create_wsgi_app(app)
-
