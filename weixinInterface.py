@@ -14,7 +14,8 @@ class WeixinInterface:
         self.templates_root = os.path.join(self.app_root, 'templates')
         self.render = web.template.render(self.templates_root)
 
-    def GET(self):
+   
+	def GET(self):
         #获取输入参数
         data = web.input()
         signature=data.signature
@@ -35,7 +36,7 @@ class WeixinInterface:
         if hashcode == signature:
             return echostr
 
-	def other(self):
+	def GET(self):
         #获取输入参数
         data = web.input()
         signature=data.signature
@@ -54,7 +55,7 @@ class WeixinInterface:
 
         #如果是来自微信的请求，则回复echostr
         if hashcode == signature:
-            return echostr        
+            return echostr
    
             
             
