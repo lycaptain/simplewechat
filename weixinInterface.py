@@ -36,6 +36,7 @@ class WeixinInterface:
             return echostr
 
 	def POST(self):        
+        
         return
    
             
