@@ -35,7 +35,7 @@ class WeixinInterface:
         if hashcode == signature:
             return echostr
 
-	def GET(self):
+	def POST(self):
         #获取输入参数
         data = web.input()
         signature=data.signature
