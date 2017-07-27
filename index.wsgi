@@ -7,7 +7,7 @@ import web
 from weixinInterface import WeixinInterface
 
 urls = (
-'/','WeixinInterface'
+'/weixin','WeixinInterface'
 )
 
 app_root = os.path.dirname(__file__)
@@ -16,3 +16,4 @@ render = web.template.render(templates_root)
 
 app = web.application(urls, globals()).wsgifunc()        
 application = sae.create_wsgi_app(app)
+
