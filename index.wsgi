@@ -2,7 +2,7 @@
 import os
 
 import sae
-import we
+import web
 
 from weixinInterface import WeixinInterface
 
