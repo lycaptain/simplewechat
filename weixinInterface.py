@@ -13,8 +13,8 @@ class WeixinInterface:
         self.app_root = os.path.dirname(__file__)
         self.templates_root = os.path.join(self.app_root, 'templates')
         self.render = web.template.render(self.templates_root)
-   
-	def GET(self):
+
+    def GET(self):
         #获取输入参数
         data = web.input()
         signature=data.signature
@@ -22,7 +22,7 @@ class WeixinInterface:
         nonce=data.nonce
         echostr=data.echostr
         #自己的token
-        token="anmmd" #这里改写你在微信公众平台里输入的token
+        token="YourToken" #这里改写你在微信公众平台里输入的token
         #字典序排序
         list=[token,timestamp,nonce]
         list.sort()
@@ -34,4 +34,3 @@ class WeixinInterface:
         #如果是来自微信的请求，则回复echostr
         if hashcode == signature:
             return echostr
-	
