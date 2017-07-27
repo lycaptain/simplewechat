@@ -2,7 +2,7 @@ name: simplewechat
 version: 1
 
 libraries:
-- name: webp
+- name: webpy
   version: "0.36"
 
 - name: lxml
