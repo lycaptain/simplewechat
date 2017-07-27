@@ -35,8 +35,9 @@ class WeixinInterface:
         if hashcode == signature:
             return echostr
 
-
-            
+	def POST(self):        
+        return
+   
             
             
             
