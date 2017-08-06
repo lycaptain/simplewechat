@@ -39,9 +39,7 @@ class WeixinInterface:
         if hashcode == signature:
             return echostr
 	
-    def huifu():
-        hui = "HI"
-        return hui
+    
         
     def POST(self):        
         str_xml = web.data() #获得post来的数据
@@ -60,7 +58,9 @@ class WeixinInterface:
         	#return self.render.reply_text(fromUser, toUser, int(time.time()), content)
         
         
-        
+    def huifu():
+        hui = "HI"
+        return hui    
         
     def youdao(word):
         qword = urllib2.quote(word)
