@@ -60,8 +60,7 @@ class WeixinInterface:
             return echostr
         
     def youdaoz(word):
-        Nword = word
-        return Nword
+        return "HI"
         
     def POST(self):        
         str_xml = web.data() #获得post来的数据
