@@ -73,7 +73,7 @@ class WeixinInterface:
             #if type(content).__name__ == "unicode":
             #	content = content.encode('UTF-8')
             N = WeixinInterface()
-            N.youdaoz('HI')        
+            N.youdaoz(content)        
             return self.render.reply_text(fromUser,toUser,int(time.time()),"HI")
         
            
