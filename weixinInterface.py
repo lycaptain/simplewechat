@@ -35,6 +35,11 @@ class WeixinInterface:
             return u'对不起，不支持的语言类型'
         else:
             return u'对不起，您输入的单词%s无法翻译,请检查拼写'% word
+        
+        
+        
+    def youdao(word):
+        return word
 
     def GET(self):
         #获取输入参数
