@@ -39,7 +39,7 @@ class WeixinInterface:
         
         
         
-    def youdao1(word):
+    def youdaoz(word):
         return word
 
     def GET(self):
@@ -73,7 +73,7 @@ class WeixinInterface:
             content = xml.find("Content").text
             #if type(content).__name__ == "unicode":
             #	content = content.encode('UTF-8')
-            #Nword = youdao1(content)        
+            #Nword = youdaoz(content)        
             return self.render.reply_text(fromUser,toUser,int(time.time()),"HI")
         
         
