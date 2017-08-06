@@ -49,7 +49,6 @@ class WeixinInterface:
         toUser=xml.find("ToUserName").text
         if msgType == 'text':
             content = xml.find("Content").text
-            huifu()
             if content == 'help':
                 return self.render.reply_text(fromUser, toUser, int(time.time()), "随便看看？（对不起我功能有限QAQ）")
             else:
@@ -57,11 +56,7 @@ class WeixinInterface:
 			
         	#return self.render.reply_text(fromUser, toUser, int(time.time()), content)
         
-        
-    def huifu():
-        hui = "HI"
-        return hui    
-        
+
     def youdao(word):
         qword = urllib2.quote(word)
         baseurl = u'http://fanyi.youdao.com/openapi.do?keyfrom=yourAppName&key=yourAppKey&type=data&doctype=json&version=1.1&q='
