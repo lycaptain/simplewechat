@@ -17,47 +17,47 @@ class WeixinInterface:
         self.render = web.template.render(self.templates_root)
         
     def youdao(word):
-    qword = urllib2.quote(word)
-    baseurl =r'http://fanyi.youdao.com/openapi.do?keyfrom=<keyfrom>&key=<key>&type=data&doctype=json&version=1.1&q='
-    url = baseurl+qword
-    resp = urllib2.urlopen(url)
-    fanyi = json.loads(resp.read())
-    if fanyi['errorCode'] == 0:        
-        if 'basic' in fanyi.keys():
-            trans = u'%s:\n%s\n%s\n网络释义：\n%s'%(fanyi['query'],''.join(fanyi['translation']),' '.join(fanyi['basic']['explains']),''.join(fanyi['web'][0]['value']))
-            return trans
+        qword = urllib2.quote(word)
+        baseurl =r'http://fanyi.youdao.com/openapi.do?keyfrom=<keyfrom>&key=<key>&type=data&doctype=json&version=1.1&q='
+        url = baseurl+qword
+        resp = urllib2.urlopen(url)
+        fanyi = json.loads(resp.read())
+        if fanyi['errorCode'] == 0:        
+            if 'basic' in fanyi.keys():
+                trans = u'%s:\n%s\n%s\n网络释义：\n%s'%(fanyi['query'],''.join(fanyi['translation']),' '.join(fanyi['basic']['explains']),''.join(fanyi['web'][0]['value']))
+                return trans
+            else:
+                trans =u'%s:\n基本翻译:%s\n'%(fanyi['query'],''.join(fanyi['translation']))        
+                return trans
+        elif fanyi['errorCode'] == 20:
+            return u'对不起，要翻译的文本过长'
+        elif fanyi['errorCode'] == 30:
+            return u'对不起，无法进行有效的翻译'
+        elif fanyi['errorCode'] == 40:
+            return u'对不起，不支持的语言类型'
         else:
-            trans =u'%s:\n基本翻译:%s\n'%(fanyi['query'],''.join(fanyi['translation']))        
-            return trans
-    elif fanyi['errorCode'] == 20:
-        return u'对不起，要翻译的文本过长'
-    elif fanyi['errorCode'] == 30:
-        return u'对不起，无法进行有效的翻译'
-    elif fanyi['errorCode'] == 40:
-        return u'对不起，不支持的语言类型'
-    else:
-        return u'对不起，您输入的单词%s无法翻译,请检查拼写'% word
+            return u'对不起，您输入的单词%s无法翻译,请检查拼写'% word
 
-    def GET(self):
-        #获取输入参数
-        data = web.input()
-        signature=data.signature
-        timestamp=data.timestamp
-        nonce=data.nonce
-        echostr=data.echostr
-        #自己的token
-        token="anmmd" #这里改写你在微信公众平台里输入的token
-        #字典序排序
-        list=[token,timestamp,nonce]
-        list.sort()
-        sha1=hashlib.sha1()
-        map(sha1.update,list)
-        hashcode=sha1.hexdigest()
-        #sha1加密算法        
+        def GET(self):
+            #获取输入参数
+            data = web.input()
+            signature=data.signature
+            timestamp=data.timestamp
+            nonce=data.nonce
+            echostr=data.echostr
+            #自己的token
+            token="anmmd" #这里改写你在微信公众平台里输入的token
+            #字典序排序
+            list=[token,timestamp,nonce]
+            list.sort()
+            sha1=hashlib.sha1()
+            map(sha1.update,list)
+            hashcode=sha1.hexdigest()
+            #sha1加密算法        
 
-        #如果是来自微信的请求，则回复echostr
-        if hashcode == signature:
-            return echostr
+            #如果是来自微信的请求，则回复echostr
+            if hashcode == signature:
+                return echostr
         
     def POST(self):        
         str_xml = web.data() #获得post来的数据
