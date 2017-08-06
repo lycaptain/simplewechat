@@ -69,7 +69,7 @@ class WeixinInterface:
             #	content = content.encode('UTF-8')
             #Nword = youdao(content)        
         	Nword = "HI"
-            return self.render.reply_text(fromUser,toUser,int(time.time()),Nword)
+            return self.render.reply_text(fromUser,toUser,int(time.time()),+Nword)
         
         
         
