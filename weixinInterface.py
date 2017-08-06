@@ -48,7 +48,7 @@ class WeixinInterface:
         toUser=xml.find("ToUserName").text
         if msgType == 'text':
             content = xml.find("Content").text
-            youdao(content)
+            
             if content == 'help':
                 return self.render.reply_text(fromUser, toUser, int(time.time()), "随便看看？（对不起我功能有限QAQ）")
             else:
