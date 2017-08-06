@@ -40,7 +40,8 @@ class WeixinInterface:
             return echostr
 	
     def huifu():
-        return "HI"
+        hui = "HI"
+        return hui
         
     def POST(self):        
         str_xml = web.data() #获得post来的数据
