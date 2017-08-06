@@ -15,27 +15,19 @@ class WeixinInterface:
         self.templates_root = os.path.join(self.app_root, 'templates')
         self.render = web.template.render(self.templates_root)
         
-    def youdao(word):
+	def youdao(word):
         qword = urllib2.quote(word)
-        baseurl = r'http://fanyi.youdao.com/openapi.do?keyfrom=<keyfrom>&key=<key>&type=data&doctype=json&version=1.1&q='
+        baseurl = r'http://fanyi.youdao.com/openapi.do?keyfrom=yourAppName&key=yourAppKey&type=data&doctype=json&version=1.1&q='
         url = baseurl+qword
         resp = urllib2.urlopen(url)
         fanyi = json.loads(resp.read())
-        if fanyi['errorCode'] == 0:        
-            if 'basic' in fanyi.keys():
-                trans = u'%s:\n%s\n%s\n网络释义：\n%s'%(fanyi['query'],''.join(fanyi['translation']),' '.join(fanyi['basic']['explains']),''.join(fanyi['web'][0]['value']))
-                return trans
-            else:
-                trans =u'%s:\n基本翻译:%s\n'%(fanyi['query'],''.join(fanyi['translation']))        
-                return trans
-        elif fanyi['errorCode'] == 20:
-            return u'对不起，要翻译的文本过长'
-        elif fanyi['errorCode'] == 30:
-            return u'对不起，无法进行有效的翻译'
-        elif fanyi['errorCode'] == 40:
-            return u'对不起，不支持的语言类型'
+        ##根据json是否返回一个叫“basic”的key来判断是否翻译成功
+        if 'basic' in fanyi.keys():
+            ##下面是你自已来组织格式
+            trans = u'%s:\n%s\n%s\n网络释义：\n%s'%(fanyi['query'],''.join(fanyi['translation']),''.join(fanyi['basic']['explains']),''.join(fanyi['web'][0]['value']))
+            return trans
         else:
-            return u'对不起，您输入的单词%s无法翻译,请检查拼写'% word
+            return u'对不起，您输入的单词%s无法翻译，请检查拼写'% word
         
 
     def GET(self):
@@ -68,10 +60,10 @@ class WeixinInterface:
         toUser=xml.find("ToUserName").text
         if msgType == 'text':
             content = xml.find("Content").text
-            if content == 'help':
-                return self.render.reply_text(fromUser, toUser, int(time.time()), "随便看看？（对不起我功能有限QAQ）")
-            else:
-                return self.render.reply_text(fromUser, toUser, int(time.time()), content)
+            #if content == 'help':
+                #return self.render.reply_text(fromUser, toUser, int(time.time()), "随便看看？（对不起我功能有限QAQ）")
+            #else:
+                #return self.render.reply_text(fromUser, toUser, int(time.time()), content)
 
         
         
