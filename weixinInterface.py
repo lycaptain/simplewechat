@@ -17,7 +17,7 @@ class WeixinInterface:
         
 	def youdao(word):
         qword = urllib2.quote(word)
-        baseurl = r'http://fanyi.youdao.com/openapi.do?keyfrom=yourAppName&key=yourAppKey&type=data&doctype=json&version=1.1&q='
+        baseurl = 'http://fanyi.youdao.com/openapi.do?keyfrom=yourAppName&key=yourAppKey&type=data&doctype=json&version=1.1&q='
         url = baseurl+qword
         resp = urllib2.urlopen(url)
         fanyi = json.loads(resp.read())
