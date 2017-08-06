@@ -59,7 +59,7 @@ class WeixinInterface:
         if hashcode == signature:
             return echostr
         
-    
+    def youdaoz():
         
         
     def POST(self):        
@@ -76,8 +76,6 @@ class WeixinInterface:
             Nword = N.youdaoz()        
             return self.render.reply_text(fromUser,toUser,int(time.time()),"HI")
         
-        
-    def youdaoz():
            
         
         
