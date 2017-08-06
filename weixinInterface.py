@@ -64,8 +64,8 @@ class WeixinInterface:
                 #return self.render.reply_text(fromUser, toUser, int(time.time()), "随便看看？（对不起我功能有限QAQ）")
             #else:
                 #return self.render.reply_text(fromUser, toUser, int(time.time()), content)
-
-        
+			youdao(content)
+        	return self.render.reply_text(fromUser, toUser, int(time.time()), content)
         
         
         
