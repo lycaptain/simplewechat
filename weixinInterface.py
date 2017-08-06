@@ -8,8 +8,7 @@ import urllib2,json
 from lxml import etree
 
 class WeixinInterface:
-
-    trans = Translation()
+    
     def __init__(self):
         self.app_root = os.path.dirname(__file__)
         self.templates_root = os.path.join(self.app_root, 'templates')
