@@ -59,8 +59,6 @@ class WeixinInterface:
         if hashcode == signature:
             return echostr
         
-    def youdaoz():
-        
         
     def POST(self):        
         str_xml = web.data() #获得post来的数据
