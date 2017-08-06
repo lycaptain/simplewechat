@@ -37,10 +37,6 @@ class WeixinInterface:
         else:
             return u'对不起，您输入的单词%s无法翻译,请检查拼写'% word
         
-        
-        
-    def youdaoz(word):
-        return word
 
     def GET(self):
         #获取输入参数
@@ -62,6 +58,10 @@ class WeixinInterface:
         #如果是来自微信的请求，则回复echostr
         if hashcode == signature:
             return echostr
+        
+    def youdaoz(word):
+        return word
+        
         
     def POST(self):        
         str_xml = web.data() #获得post来的数据
