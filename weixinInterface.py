@@ -20,7 +20,7 @@ class WeixinInterface:
         baseurl = u'http://fanyi.youdao.com/openapi.do?keyfrom=yourAppName&key=yourAppKey&type=data&doctype=json&version=1.1&q='
         url = baseurl+qword
         resp = urllib2.urlopen(url)
-        fanyi = json.loads(resp.read().decode())
+        fanyi = json.loads(resp.read())
         ##根据json是否返回一个叫“basic”的key来判断是否翻译成功
         if 'basic' in fanyi.keys():
             ##下面是你自已来组织格式
