@@ -47,11 +47,14 @@ class WeixinInterface:
         if msgType == 'text':
             content = xml.find("Content").text
             
-            if content == 'help':
-                return self.render.reply_text(fromUser, toUser, int(time.time()), "随便看看？（对不起我功能有限QAQ）")
-            else:
-                return self.render.reply_text(fromUser, toUser, int(time.time()), content)
-			
+            #if content == 'help':
+                #return self.render.reply_text(fromUser, toUser, int(time.time()), "随便看看？（对不起我功能有限QAQ）")
+            #else:
+                #return self.render.reply_text(fromUser, toUser, int(time.time()), content)
+			if content[0:2] == u"快递":
+            	post = str(content[2:])
+            	kuaidi = cxkd.detect_com(post)
+            	return self.render.reply_text(fromUser,toUser,int(time.time()), kuaidi)
         	#return self.render.reply_text(fromUser, toUser, int(time.time()), Nword)
         
         
