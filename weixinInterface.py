@@ -55,8 +55,8 @@ class WeixinInterface:
             	post = str(content[2:])
             	kuaidi = cxkd.detect_com(post)
             	return self.render.reply_text(fromUser,toUser,int(time.time()), kuaidi)
-            else:
-            	return self.render.reply_text(fromUser,toUser,int(time.time()), "HI")
+            #else:
+            	#return self.render.reply_text(fromUser,toUser,int(time.time()), "HI")
         	#return self.render.reply_text(fromUser, toUser, int(time.time()), Nword)
         
         
