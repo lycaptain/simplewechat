@@ -54,9 +54,9 @@ class WeixinInterface:
             content = xml.find("Content").text
             #Nword = youdao(content)
             if content == 'help':
-                #return self.render.reply_text(fromUser, toUser, int(time.time()), "随便看看？（对不起我功能有限QAQ）")
+                return self.render.reply_text(fromUser, toUser, int(time.time()), "随便看看？（对不起我功能有限QAQ）")
             else:
-                #return self.render.reply_text(fromUser, toUser, int(time.time()), content)
+                return self.render.reply_text(fromUser, toUser, int(time.time()), content)
 			
         	#return self.render.reply_text(fromUser, toUser, int(time.time()), Nword)
         
