@@ -18,7 +18,7 @@ class WeixinInterface:
         
    	def youdao(word):
     	Nword = word
-        return Nword
+        	return Nword
         
 
     def GET(self):
