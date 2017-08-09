@@ -16,8 +16,8 @@ class WeixinInterface:
         self.render = web.template.render(self.templates_root)
         
         
-   	def youdao(word):
-        return word
+   	#def youdao(word):
+        #return word
         
 
     def GET(self):
