@@ -53,8 +53,8 @@ class WeixinInterface:
 			if content[0:2] == u"快递":
             	post = str(content[2:])
             	kuaidi = cxkd.detect_com(post)
-            	return self.render.reply_text(fromUser,toUser,int(time.time()), kuaidi)
-        
+            	#return self.render.reply_text(fromUser,toUser,int(time.time()), kuaidi)
+        		return self.render.reply_text(fromUser,toUser,int(time.time()), "HI")
         
 
         
