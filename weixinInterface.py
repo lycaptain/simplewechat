@@ -10,6 +10,9 @@ from lxml import etree
 
 class WeixinInterface:
     
+    def youdao(word):
+    	return word
+    
     def __init__(self):
         self.app_root = os.path.dirname(__file__)
         self.templates_root = os.path.join(self.app_root, 'templates')
