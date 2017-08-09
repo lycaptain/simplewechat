@@ -45,8 +45,7 @@ class WeixinInterface:
         fromUser = xml.find("FromUserName").text
         toUser = xml.find("ToUserName").text
         if msgType == 'text':
-            content = xml.find("Content").text
-            
+            content = xml.find("Content").text            
             #if content == 'help':
                 #return self.render.reply_text(fromUser, toUser, int(time.time()), "随便看看？（对不起我功能有限QAQ）")
             #else:
@@ -55,9 +54,6 @@ class WeixinInterface:
             	post = str(content[2:])
             	kuaidi = cxkd.detect_com(post)
             	return self.render.reply_text(fromUser,toUser,int(time.time()), kuaidi)
-            #else:
-            	#return self.render.reply_text(fromUser,toUser,int(time.time()), "HI")
-        	#return self.render.reply_text(fromUser, toUser, int(time.time()), Nword)
         
         
 
