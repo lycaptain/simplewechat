@@ -7,7 +7,7 @@ import web
 from weixinInterface import WeixinInterface
 
 urls = (
-'/weixin','WeixinInterface'
+'/vendor','WeixinInterface'
 )
 
 sae.add_vendor_dir('vendor')
