@@ -3,7 +3,6 @@ import os
 
 import sae
 import web
-#from translation import Translation
 from weixinInterface import WeixinInterface
 
 urls = (
