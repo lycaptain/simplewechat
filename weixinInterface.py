@@ -7,6 +7,7 @@ import os
 import urllib2,json
 import json
 import translation
+from translation import Translation
 from lxml import etree
 
 class WeixinInterface:
