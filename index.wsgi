@@ -9,7 +9,7 @@ urls = (
 '/wexin','WeixinInterface'
 )
 
-sae.add_vendor_dir('vendor')
+#sae.add_vendor_dir('vendor')
 app_root = os.path.dirname(__file__)
 templates_root = os.path.join(app_root, 'templates')
 render = web.template.render(templates_root)
