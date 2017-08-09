@@ -54,6 +54,9 @@ class WeixinInterface:
         	#return self.render.reply_text(fromUser, toUser, int(time.time()), Nword)
         
         
+    def youdao(word)
+    	return word
+        
         
         
         
