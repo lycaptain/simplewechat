@@ -7,6 +7,7 @@ import os
 import urllib2,json
 import json
 import cxkd
+import Simsimi
 import translation
 from lxml import etree
 
