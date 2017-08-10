@@ -64,10 +64,7 @@ class WeixinInterface:
             	if content.lower() == 'xhj':
                     mc.set(fromUser+'_xhj', 'xhj')
                     return self.render.reply_text(fromUser,toUser,int(time.time()),u'您已经进入与小黄鸡的交谈中，请尽情的蹂躏它吧！输入bye跳出与小黄鸡的交谈')
-            	if type(content).__name__ == "unicode":
-            		content = content.encode('UTF-8')
-                	Nword = translation.youdao(content)
-                	return self.render.reply_text(fromUser,toUser,int(time.time()), Nword)    
+            	    
                 
             #读取mcmcache数据
             mcxhj = mc.get(fromUser+'_xhj')
@@ -79,7 +76,10 @@ class WeixinInterface:
                     reply_text = u'小黄鸡脑袋出问题了，请换个问题吧~'
                     #这里小黄鸡会有广告，屏蔽
                 return self.render.reply_text(fromUser,toUser,int(time.time()),reply_text)            
-            	         
+            if type(content).__name__ == "unicode":
+            		content = content.encode('UTF-8')
+                	Nword = translation.youdao(content)
+                	return self.render.reply_text(fromUser,toUser,int(time.time()), Nword)	         
         elif msgType == 'image':
             pass
         elif msgType == 'event':
