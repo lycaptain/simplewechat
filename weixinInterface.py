@@ -75,6 +75,12 @@ class WeixinInterface:
             mcxhj = mc.get(fromUser+'_xhj')
             
             if mcxhj == 'xhj':
+                res = Simsimi.simsimi(content)
+                reply_text = res['response']
+                if u'微信' in reply_text:
+                    reply_text = u"小黄鸡脑袋出问题了，请换个问题吧~" #这里小黄鸡会有广告，我索性就全给屏蔽了
+                	return self.render.reply_text(fromUser,toUser,int(time.time()),reply_text)            
+            
                 
             
             
