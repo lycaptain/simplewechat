@@ -75,8 +75,8 @@ class WeixinInterface:
                 #if u'微信' in reply_text:
                     #reply_text = u'小黄鸡脑袋出问题了，请换个问题吧~'
                     #这里小黄鸡会有广告，屏蔽
-                return self.render.reply_text(fromUser,toUser,int(time.time()),reply_text)            
-            if type(content).__name__ == "unicode":
+                return self.render.reply_text(fromUser,toUser,int(time.time()),res)            
+            if type(content).__name__ == 'unicode':
             		content = content.encode('UTF-8')
                 	Nword = translation.youdao(content)
                 	return self.render.reply_text(fromUser,toUser,int(time.time()), Nword)	         
