@@ -45,14 +45,16 @@ class WeixinInterface:
         fromUser=xml.find("FromUserName").text 
         toUser=xml.find("ToUserName").text 
         if msgType == 'text':
-            content = xml.find("Content").text
+            content=xml.find("Content").text
             if content[0:2] == u"快递":
                 post = str(content[2:])
-                replayText = cxkd.detect_com(post)
-                return self.render.reply_text(fromUser,toUser,int(time.time()), replayText)
+                kuaidi = cxkd.detect_com(post)
+                return self.render.reply_text(fromUser,toUser,int(time.time()), kuaidi)
             else:
                 return self.render.reply_text(fromUser,toUser,int(time.time()), content)
         elif msgType == 'image':
+            pass
+        else:
             pass
         
         
