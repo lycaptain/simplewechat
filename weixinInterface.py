@@ -52,6 +52,8 @@ class WeixinInterface:
                 kuaidi = cxkd.detect_com(post)
                 return self.render.reply_text(fromUser,toUser,int(time.time()), kuaidi)
             else:
+                if type(content).__name__ == "unicode":
+            		content = content.encode('UTF-8')
                 fanyi = translation.youdao(content)
                 return self.render.reply_text(fromUser,toUser,int(time.time()), fanyi)
         elif msgType == 'image':
