@@ -52,7 +52,8 @@ class WeixinInterface:
                 return self.render.reply_text(fromUser,toUser,int(time.time()), kuaidi)
             else:
                 return self.render.reply_text(fromUser,toUser,int(time.time()), content)
-
+        elif msgType == 'image':
+            pass
         elif msgType == 'event':
             content = xml.find("Event").text
             if content == 'subscribe':
