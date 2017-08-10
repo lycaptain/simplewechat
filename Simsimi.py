@@ -6,6 +6,6 @@ def simsimi(ask):
     qask = urllib2.quote(ask)
     baseurl = r'http://www.simsimi.com/func/req?msg='
     url = baseurl + qask + '&lc=ch&ft=0.0'
-    resp = urllib2.openurl(url)
+    resp = urllib2.urlopen(url)
     respjson = json.loads(resp.read())
     return respjson
