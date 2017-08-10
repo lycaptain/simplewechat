@@ -11,6 +11,8 @@ def simsimi(ask):
     url = baseurl+qask
     #baseurl = r'http://sandbox.api.simsimi.com/request.p?key=45afcfa5-395f-4676-836d-0a61af189161&lc=en&ft=1.0&text='
     #url = baseurl + qask
-    resp = urllib2.urlopen(url)
+    req = urllib2.Request(url,headers=send_headers)
+    resp = urllib2.urlopen(req)
+    #resp = urllib2.urlopen(url)
     respjson = json.loads(resp.read())
     return respjson
