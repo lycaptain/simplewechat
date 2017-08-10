@@ -68,7 +68,7 @@ class WeixinInterface:
                     mc.delete(fromUser+'_xhj')
                     return self.render.reply_text(fromUser,toUser,int(time.time()),u'您已经跳出了和小黄鸡的交谈中，输入help来显示操作指令')
             	if content.lower() == 'xhj':
-                    mc.set(fromUser+'_xhj')
+                    mc.set(fromUser+'_xhj', 'xhj')
                     return self.render.reply_text(fromUser,toUser,int(time.time()),u'您已经进入与小黄鸡的交谈中，请尽情的蹂躏它吧！输入bye跳出与小黄鸡的交谈')
             
             #读取mcmcache数据
