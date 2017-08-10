@@ -44,9 +44,9 @@ class WeixinInterface:
     def POST(self): 
         str_xml = web.data() #获得post来的数据 
         xml = etree.fromstring(str_xml)#进行XML解析 
-        msgType=xml.find("MsgType").text 
-        fromUser=xml.find("FromUserName").text 
-        toUser=xml.find("ToUserName").text 
+        msgType = xml.find("MsgType").text 
+        fromUser = xml.find("FromUserName").text 
+        toUser = xml.find("ToUserName").text 
         mc = pylibmc.Client()
         #初始化一个memcache实例来保存用户的操作
         
