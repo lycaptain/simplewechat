@@ -56,7 +56,10 @@ class WeixinInterface:
             pass
         elif msgType == 'event':
             content = xml.find("Event").text
-            
+            if content == 'subscribe':
+                replayText = u'欢迎关注本微信'
+                return self.render.reply_text(fromUser,toUser,int(time.time()), replayText)
+			
         
 
         
