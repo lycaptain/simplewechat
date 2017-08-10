@@ -67,7 +67,7 @@ class WeixinInterface:
             	if content.lower() == 'help':
                 	replayText = u'''1.输入快递+单号（不含‘+’）查询该快递属于哪一个公司\n2.输入xhj进入调戏小黄鸡模式，输入bye离开小黄鸡
                    		\n3.输入其它则进入翻译模式'''
-                	return self.render.reply_text(fromUser,toUser,int(time.time()),u'您已经进入与小黄鸡的交谈中，请尽情的蹂躏它吧！输入bye跳出与小黄鸡的交谈')
+                	return self.render.reply_text(fromUser,toUser,int(time.time()),replayText)
 
             #读取mcmcache数据
             mcxhj = mc.get(fromUser+'_xhj')
