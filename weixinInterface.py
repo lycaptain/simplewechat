@@ -54,8 +54,8 @@ class WeixinInterface:
             else:
                 if type(content).__name__ == "unicode":
             		content = content.encode('UTF-8')
-                fanyi = translation.youdao(content)
-                return self.render.reply_text(fromUser,toUser,int(time.time()), fanyi)
+                Nword = translation.youdao(content)
+                return self.render.reply_text(fromUser,toUser,int(time.time()), Nword)
         elif msgType == 'image':
             pass
         elif msgType == 'event':
