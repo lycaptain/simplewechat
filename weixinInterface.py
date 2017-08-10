@@ -7,6 +7,7 @@ import os
 import urllib2,json
 import json
 import cxkd
+import translation
 from lxml import etree
 
 class WeixinInterface:
@@ -51,7 +52,8 @@ class WeixinInterface:
                 kuaidi = cxkd.detect_com(post)
                 return self.render.reply_text(fromUser,toUser,int(time.time()), kuaidi)
             else:
-                return self.render.reply_text(fromUser,toUser,int(time.time()), content)
+                fanyi = translation.youdao(content)
+                return self.render.reply_text(fromUser,toUser,int(time.time()), fanyi)
         elif msgType == 'image':
             pass
         elif msgType == 'event':
