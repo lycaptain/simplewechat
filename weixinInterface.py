@@ -73,11 +73,12 @@ class WeixinInterface:
             
             if mcxhj == 'xhj':
                 res = Simsimi.simsimi(content)
-                resnum = res['result']
-                if resnum == 100:
-                	reply_text = res['response']
-                else:
-                    reply_text = '小黄鸡脑袋出问题了，换个话题吧'
+                reply_text = res['sentence_resp']
+                #resnum = res['result']
+                #if resnum == 100:
+                	#reply_text = res['response']
+                #else:
+                    #reply_text = '小黄鸡脑袋出问题了，换个话题吧'
                 #if u'微信' in reply_text:
                     #reply_text = u'小黄鸡脑袋出问题了，请换个问题吧~'
                     #这里小黄鸡会有广告，屏蔽
