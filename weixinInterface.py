@@ -64,8 +64,12 @@ class WeixinInterface:
             	if content.lower() == 'xhj':
                     mc.set(fromUser+'_xhj', 'xhj')
                     return self.render.reply_text(fromUser,toUser,int(time.time()),u'您已经进入与小黄鸡的交谈中，请尽情的蹂躏它吧！输入bye跳出与小黄鸡的交谈')
-            	    
-                
+            	if content.lower() == 'help'
+                	replayText = u'''1.输入快递+单号（不含‘+’）查询该快递属于哪一个公司\n2.输入xhj进入调戏小黄鸡模式，输入bye离开小黄鸡
+                   \n3.输入其它则进入翻译模式'''
+                    return self.render.reply_text(fromUser,toUser,int(time.time()),replayText)
+
+                	
             #读取mcmcache数据
             mcxhj = mc.get(fromUser+'_xhj')
             
@@ -79,7 +83,8 @@ class WeixinInterface:
                 #if u'微信' in reply_text:
                     #reply_text = u'小黄鸡脑袋出问题了，请换个问题吧~'
                     #这里小黄鸡会有广告，屏蔽
-                return self.render.reply_text(fromUser,toUser,int(time.time()),reply_text)            
+                return self.render.reply_text(fromUser,toUser,int(time.time()),reply_text)   
+            
             if type(content).__name__ == 'unicode':
             		content = content.encode('UTF-8')
                 	Nword = translation.youdao(content)
