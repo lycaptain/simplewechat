@@ -56,11 +56,7 @@ class WeixinInterface:
                 post = str(content[2:])
                 kuaidi = cxkd.detect_com(post)
                 return self.render.reply_text(fromUser,toUser,int(time.time()), kuaidi)            
-            elif:
-                if type(content).__name__ == "unicode":
-            		content = content.encode('UTF-8')
-                Nword = translation.youdao(content)
-                return self.render.reply_text(fromUser,toUser,int(time.time()), Nword)            
+                        
             else:
                 if content.lower() == 'bye':
                     mc.delete(fromUser+'_xhj')
@@ -68,7 +64,11 @@ class WeixinInterface:
             	if content.lower() == 'xhj':
                     mc.set(fromUser+'_xhj', 'xhj')
                     return self.render.reply_text(fromUser,toUser,int(time.time()),u'您已经进入与小黄鸡的交谈中，请尽情的蹂躏它吧！输入bye跳出与小黄鸡的交谈')
-            
+            	if type(content).__name__ == "unicode":
+            		content = content.encode('UTF-8')
+                	Nword = translation.youdao(content)
+                	return self.render.reply_text(fromUser,toUser,int(time.time()), Nword)    
+                
             #读取mcmcache数据
             mcxhj = mc.get(fromUser+'_xhj')
             
