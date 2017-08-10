@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import urllib2
-
+import json
 def simsimi(ask):
     ask = ask.encode('UTF-8')
     qask = urllib.request.quote(ask)
