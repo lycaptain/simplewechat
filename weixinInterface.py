@@ -59,7 +59,8 @@ class WeixinInterface:
             if content == 'subscribe':
                 replayText = u'欢迎关注本微信'
                 return self.render.reply_text(fromUser,toUser,int(time.time()), replayText)
-			else:
+			
+            else:
                	pass
         
 
