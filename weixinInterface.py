@@ -10,8 +10,8 @@ import cxkd
 import Simsimi
 import translation
 import pylibmc
-#import DBmodel
-#from DBmodel import dbOperation
+import DBmodel
+from DBmodel import dbOperation
 from lxml import etree
 
 class WeixinInterface:
@@ -54,7 +54,7 @@ class WeixinInterface:
         
         if msgType == 'text':
             content=xml.find("Content").text
-			if content.startswith('fk'):
+            if content.startswith('fk'):
         		fktime = time.strftime('%Y-%m-%d %H:%M',time.localtime())        
         		dbOperation.addfk(fromUser,fktime,content[3:].encode('utf-8'))        
         		return self.render.reply_text(fromUser,toUser,int(time.time()),u'感谢您的反馈')
