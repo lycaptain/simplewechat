@@ -11,7 +11,7 @@ import Simsimi
 import translation
 import pylibmc
 import DBmodel
-from DBmodel import dbOperation
+#from DBmodel import dbOperation
 from lxml import etree
 
 class WeixinInterface:
