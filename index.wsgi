@@ -8,7 +8,7 @@ from weixinInterface import WeixinInterface
 
 class Hello:
     def GET(self):
-        return render.Hello("你好")
+        return render.hello("你好")
     
 class feedback:
     def GET(self):
