@@ -10,7 +10,7 @@ import cxkd
 import Simsimi
 import translation
 import pylibmc
-import DBmodel
+#import DBmodel
 #from DBmodel import dbOperation
 from lxml import etree
 
