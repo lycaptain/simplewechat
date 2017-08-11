@@ -21,5 +21,5 @@ class dbOperation:
 	def get_fkcontent():
         if db :
 			return db.select('fk', order='id')
-        else:
+        else :
             return "Error"
