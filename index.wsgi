@@ -3,6 +3,8 @@ import os
 
 import sae
 import web
+import DBmodel
+from DBmodel import dbOperation
 from weixinInterface import WeixinInterface
 
 urls = (
