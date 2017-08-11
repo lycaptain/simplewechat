@@ -17,8 +17,8 @@ class feedback:
     
     
 urls = (
-'/weixin','WeixinInterface'
 '/', 'Hello'
+'/weixin','WeixinInterface'
 '/ck', 'feedback'
 )
 
