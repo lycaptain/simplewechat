@@ -19,4 +19,7 @@ class dbOperation:
         else:
             return "Error"
 	def get_fkcontent():
-		return db.select('fk', order='id')
+        if(db)
+			return db.select('fk', order='id')
+        else:
+            return "Error"
