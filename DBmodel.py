@@ -19,5 +19,5 @@ class dbOperation:
    		return ans
     							
     def get_fkcontent( ):
-       	ans = db.select('fk', order='id')
+       		ans = db.select('fk', order='id')
     	return ans
