@@ -5,14 +5,15 @@ import web
 import DBmodel
 from DBmodel import dbOperation
 from weixinInterface import WeixinInterface
+
 class Hello:
-	def GET(self):
-		return render.hello("你好")
+    def GET(self):
+        return render.hello("你好")
     
 class feedback:
-	def GET(self):
-		fkcon = dbOperation.get_fkcontent()
-		return render.checkfk(fkcon)
+    def GET(self):
+        fkcon = dbOperation.get_fkcontent()
+        return render.checkfk(fkcon)
     
     
 urls = (
