@@ -6,7 +6,7 @@ import sae.const
 class dbOperation:
     
 	db = web.database(
-         dbn='app_simplewechat',
+         dbn='mysql',
          host=sae.const.MYSQL_HOST,
          port=int(sae.const.MYSQL_PORT),
          user=sae.const.MYSQL_USER,
