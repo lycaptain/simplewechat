@@ -9,7 +9,7 @@ class dbOperation:
          dbn='mysql',
          port=int(sae.const.MYSQL_PORT),
          host=sae.const.MYSQL_HOST,
-         db=sae.const.MYSQL_DB
+         db=sae.const.MYSQL_DB,
          user=sae.const.MYSQL_USER,
          passwd=sae.const.MYSQL_PASS,       
 	)
