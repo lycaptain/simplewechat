@@ -1,43 +1,18 @@
-# -*- coding: utf-8 -*-
+# coding: UTF-8
 import os
 
 import sae
 import web
-#import DBmodel
-#from DBmodel import dbOperation
+sae.add_vendor_dir('vendor')
 from weixinInterface import WeixinInterface
 
 urls = (
 '/weixin','WeixinInterface'
-'/', 'Hello'
 )
 
 app_root = os.path.dirname(__file__)
 templates_root = os.path.join(app_root, 'templates')
 render = web.template.render(templates_root)
 
-class Hello:
-	def GET(self):
-		return render.hello("你好")
-    
-#class feedback:
-	#def GET(self):
-		#fkcon = dbOperation.get_fkcontent()
-		#return render.checkfk(fkcon)
 app = web.application(urls, globals()).wsgifunc()        
-application = sae.create_wsgi_app(app)   
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+application = sae.create_wsgi_app(app)
