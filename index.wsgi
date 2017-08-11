@@ -3,8 +3,8 @@ import os
 
 import sae
 import web
-import DBmodel
-from DBmodel import dbOperation
+#import DBmodel
+#from DBmodel import dbOperation
 from weixinInterface import WeixinInterface
 
 urls = (
@@ -21,10 +21,10 @@ class Hello:
 	def GET(self):
 		return render.hello("你好")
     
-class feedback:
-	def GET(self):
-		fkcon = dbOperation.get_fkcontent()
-		return render.checkfk(fkcon)
+#class feedback:
+	#def GET(self):
+		#fkcon = dbOperation.get_fkcontent()
+		#return render.checkfk(fkcon)
 app = web.application(urls, globals()).wsgifunc()        
 application = sae.create_wsgi_app(app)   
     
