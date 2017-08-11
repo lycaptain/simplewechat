@@ -11,8 +11,7 @@ class dbOperation:
          host=sae.const.MYSQL_HOST,
          db=sae.const.MYSQL_DB
          user=sae.const.MYSQL_USER,
-         passwd=sae.const.MYSQL_PASS,
-         
+         passwd=sae.const.MYSQL_PASS,       
 	)
     
 	def addfk(username, fktime, fkcontent):      	
