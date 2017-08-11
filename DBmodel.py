@@ -11,9 +11,9 @@ class dbOperation:
         user=sae.const.MYSQL_USER,
         passwd=sae.const.MYSQL_PASS,
         db=sae.const.MYSQL_DB
-   	)
+   		)
     
-    def addfk(username, fktime, fkcontent):
+	def addfk(username, fktime, fkcontent):
     	return db.insert('fk', user=username, time=fktime, fk_content=fkcontent)
  
 	def get_fkcontent():
