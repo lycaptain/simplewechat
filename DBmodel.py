@@ -4,6 +4,7 @@ import web.db
 import sae.const
 
 class dbOperation:
+    
 	db = web.database(
          dbn='mysql',
          host=sae.const.MYSQL_HOST,
