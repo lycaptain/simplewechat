@@ -6,10 +6,11 @@ import DBmodel
 from DBmodel import dbOperation
 from weixinInterface import WeixinInterface
 
-urls = (
-'/weixin','WeixinInterface'
-'/', 'Hello'
-)
+	urls = (
+	'/weixin','WeixinInterface'
+	'/', 'Hello'
+    '/ck', 'feedback'
+	)
 
 app_root = os.path.dirname(__file__)
 templates_root = os.path.join(app_root, 'templates')
@@ -23,6 +24,7 @@ class feedback:
 	def GET(self):
 		fkcon = dbOperation.get_fkcontent()
 		return render.checkfk(fkcon)
+    
 app = web.application(urls, globals()).wsgifunc()        
 application = sae.create_wsgi_app(app)   
     
