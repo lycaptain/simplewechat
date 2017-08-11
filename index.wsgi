@@ -17,7 +17,9 @@ class feedback:
     
     
 urls = (
-'/weixin','WeixinInterface'
+'/', 'Hello',
+'/weixin','WeixinInterface',
+'/ck','feedback',
 )
 
 app_root = os.path.dirname(__file__)
