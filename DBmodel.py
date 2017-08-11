@@ -18,6 +18,6 @@ class dbOperation:
         	ans = db.insert('fk', user=username, time=fktime, fk_content=fkcontent)
    		return ans
     							
-    def get_fkcontent():
+    def get_fkcontent()	:
        	ans = db.select('fk', order='id')
     	return ans
