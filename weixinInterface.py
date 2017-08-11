@@ -57,7 +57,7 @@ class WeixinInterface:
             content=xml.find("Content").text
             if content.startswith('fk'):
         		fktime = time.strftime('%Y-%m-%d %H:%M',time.localtime())        
-        		dbOperation.addfk(fromUser,fktime,content[3:].encode('utf-8'))        
+        		#dbOperation.addfk(fromUser,fktime,content[3:].encode('utf-8'))        
         		return self.render.reply_text(fromUser,toUser,int(time.time()),u'感谢您的反馈')
             if content[0:2] == u"快递":
                 post = str(content[2:])
