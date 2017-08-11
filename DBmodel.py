@@ -13,9 +13,9 @@ class dbOperation:
         db=sae.const.MYSQL_DB
    		)
     
-	#def addfk(username, fktime, fkcontent):
-    	#return db.insert('fk',user=username,time=fktime,fk_content=fkcontent)
- 
+    def addfk(username, fktime, fkcontent):
+        return db.insert('fk', user=username, time=fktime, fk_content=fkcontent)
+
 
 	#def get_fkcontent():
     	#return db.select('fk', order='id')
