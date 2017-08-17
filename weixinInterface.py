@@ -53,7 +53,7 @@ class WeixinInterface:
         #初始化一个memcache实例来保存用户的操作
         
 		if msgType == 'text':
-        content = xml.find("Content").text
+        	content = xml.find("Content").text
         	if content.startswith('fk'):
        			fktime = time.strftime('%Y-%m-%d %H:%M',time.localtime())        
         		ans = DBmodel.addfk(fromUser,fktime,content[3:].encode('utf-8'))  
