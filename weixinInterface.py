@@ -53,9 +53,9 @@ class WeixinInterface:
         #初始化一个memcache实例来保存用户的操作
         
 		if msgType == 'text':
-            content=xml.find("Content").text
-            if content.startswith('fk'):
-        		fktime = time.strftime('%Y-%m-%d %H:%M',time.localtime())        
+        	content=xml.find("Content").text
+        	if content.startswith('fk'):
+       			fktime = time.strftime('%Y-%m-%d %H:%M',time.localtime())        
         		ans = DBmodel.addfk(fromUser,fktime,content[3:].encode('utf-8'))  
         		return self.render.reply_text(fromUser,toUser,int(time.time()),u'感谢您的反馈'+ans)
             if content[0:2] == u"快递":
