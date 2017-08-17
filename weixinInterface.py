@@ -82,7 +82,7 @@ class WeixinInterface:
                 res = Simsimi.simsimi(content)
                 resnum = res['status']
                 if resnum == 200:
-                	reply_text = res['response']
+                	reply_text = res['respSentence']
                 else:
                     reply_text = '小黄鸡脑袋出问题了，换个话题吧'
                 #if u'微信' in reply_text:
