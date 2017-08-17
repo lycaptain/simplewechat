@@ -11,7 +11,7 @@ db = web.database(
     user=sae.const.MYSQL_USER,
     pw=sae.const.MYSQL_PASS
 	)
-
+web.config.debug = True
 def addfk(username, fktime, fkcontent):      	
 	return db.insert('fk', user='41512241', time='2017', fk_content='hello')
 
