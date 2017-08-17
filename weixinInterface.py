@@ -99,7 +99,7 @@ class WeixinInterface:
             	replayText = u'welcome'
             	return self.render.reply_text(fromUser,toUser,int(time.time()), replayText)			
             elif content == 'unsubscribe':
-                replayText = u'再见'
+                replayText = u'bye'
                	return self.render.reply_text(fromUser,toUser,int(time.time()), replayText)
             
             
