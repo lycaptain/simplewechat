@@ -13,7 +13,7 @@ db = web.database(
 	)
 web.config.debug = True
 def addfk(username, fktime, fkcontent):      	
-	return db.insert('fk', user='41512241', time='2017', fk_content='hello')
+	return db.insert('fk', user=username, time=fktime, fk_content=fkcontent)
 
 def get_fkcontent():
     return db.select('fk', order='id')
