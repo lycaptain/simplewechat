@@ -3,7 +3,6 @@ import os
 import sae
 import web
 import DBmodel
-from DBmodel import dbOperation
 from weixinInterface import WeixinInterface
 
 class Hello:
@@ -12,7 +11,7 @@ class Hello:
     
 class feedback:
     def GET(self):
-        fkcon = dbOperation.get_fkcontent()
+        fkcon = DBmodel.get_fkcontent()
         return render.checkfk(fkcon)
     
     
