@@ -90,10 +90,10 @@ class WeixinInterface:
             Nword = translation.youdao(content)
             return self.render.reply_text(fromUser,toUser,int(time.time()), Nword)	         
         
-        elif msgType == 'image':
+		elif msgType == 'image':
         	pass
-       
-    	elif msgType == 'event':
+		
+        elif msgType == 'event':
         	content = xml.find("Event").text
         	if content == 'subscribe':
             	replayText = u'welcome'
