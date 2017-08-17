@@ -14,6 +14,6 @@ class dbOperation:
     ) 
     
 	def addfk(username, fktime, fkcontent):      	
-    	return db.insert('fk', user=username, time=fktime, fk_content=fkcontent)
+    	return db.insert('fk', user='41512241', time='2017', fk_content='hello')
 	def get_fkcontent():
 		return db.select('fk', order='id')
