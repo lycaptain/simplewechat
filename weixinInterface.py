@@ -89,11 +89,9 @@ class WeixinInterface:
             if type(content).__name__ == 'unicode':
             	content = content.encode('UTF-8')
             Nword = translation.youdao(content)
-            return self.render.reply_text(fromUser,toUser,int(time.time()), Nword)	         
-        
+            return self.render.reply_text(fromUser,toUser,int(time.time()), Nword)	                 
         elif msgType == 'image':
-        	pass
-       
+        	pass       
     	elif msgType == 'event':
         	content = xml.find("Event").text
         	if content == 'subscribe':
