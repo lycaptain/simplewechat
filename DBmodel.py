@@ -10,9 +10,10 @@ db = web.database(
 	db=sae.const.MYSQL_DB, 
 	user=sae.const.MYSQL_USER, 
 	pw=sae.const.MYSQL_PASS
-	) 
-    
-	def addfk(username, fktime, fkcontent):      	
-    	return db.insert('fk', user='41512241', time='2017', fk_content='hello')
-	def get_fkcontent():
-		return db.select('fk', order='id')
+	)  
+
+def addfk(username, fktime, fkcontent):      	
+	return db.insert('fk', user='41512241', time='2017', fk_content='hello')
+
+def get_fkcontent():
+    return db.select('fk', order='id')
