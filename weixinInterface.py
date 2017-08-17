@@ -62,34 +62,33 @@ class WeixinInterface:
             if content[0:2] == u"快递":
                 post = str(content[2:])
                 kuaidi = cxkd.detect_com(post)
-                return self.render.reply_text(fromUser,toUser,int(time.time()), kuaidi)            
-                        
+                return self.render.reply_text(fromUser,toUser,int(time.time()), kuaidi)                                    
             else:
-                if content.lower() == 'bye':
-                    mc.delete(fromUser+'_xhj')
-                    return self.render.reply_text(fromUser,toUser,int(time.time()),u'您已经跳出了和小黄鸡的交谈中，输入help来显示操作指令')
+            	if content.lower() == 'bye':
+                	mc.delete(fromUser+'_xhj')
+                	return self.render.reply_text(fromUser,toUser,int(time.time()),u'您已经跳出了和小黄鸡的交谈中，输入help来显示操作指令')
             	if content.lower() == 'xhj':
-                    mc.set(fromUser+'_xhj', 'xhj')
-                    return self.render.reply_text(fromUser,toUser,int(time.time()),u'您已经进入与小黄鸡的交谈中，请尽情的蹂躏它吧！输入bye跳出与小黄鸡的交谈')
+                	mc.set(fromUser+'_xhj', 'xhj')
+                	return self.render.reply_text(fromUser,toUser,int(time.time()),u'您已经进入与小黄鸡的交谈中，请尽情的蹂躏它吧！输入bye跳出与小黄鸡的交谈')
             	if content.lower() == 'help':
-                	replayText = u'''1.输入快递+单号（不含‘+’）查询该快递属于哪一个公司\n2.输入xhj进入调戏小黄鸡模式，输入bye离开小黄鸡\n3.输入其它则进入翻译模式'''
+               		replayText = u'''1.输入快递+单号（不含‘+’）查询该快递属于哪一个公司\n2.输入xhj进入调戏小黄鸡模式，输入bye离开小黄鸡\n3.输入其它则进入翻译模式'''
                 	return self.render.reply_text(fromUser,toUser,int(time.time()),replayText)
 
             #读取mcmcache数据
             mcxhj = mc.get(fromUser+'_xhj')
             
             if mcxhj == 'xhj':
-                res = Simsimi.simsimi(content)
-                resnum = res['status']
-                if resnum == 200:
+            	res = Simsimi.simsimi(content)
+            	resnum = res['status']
+            	if resnum == 200:
                 	reply_text = res['respSentence']
-                else:
-                    reply_text = '小黄鸡脑袋出问题了，换个话题吧'
-                return self.render.reply_text(fromUser,toUser,int(time.time()),reply_text)   
+               	else:
+                	reply_text = '小黄鸡脑袋出问题了，换个话题吧'
+            	return self.render.reply_text(fromUser,toUser,int(time.time()),reply_text)   
             
             if type(content).__name__ == 'unicode':
             		content = content.encode('UTF-8')
-                	Nword = translation.youdao(content)
+            Nword = translation.youdao(content)
                 	return self.render.reply_text(fromUser,toUser,int(time.time()), Nword)	         
         elif msgType == 'image':
             pass
