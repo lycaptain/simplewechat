@@ -3,6 +3,7 @@ import hashlib
 import web
 import lxml
 import time
+import os
 import urllib2,json
 import json
 import cxkd
