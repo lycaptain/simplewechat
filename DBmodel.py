@@ -2,8 +2,7 @@
 import web
 import web.db
 import sae.const
-
-class dbOperation:    
+    
     db = web.database(
         dbn='mysql', 
         port=int(sae.const.MYSQL_PORT), 
