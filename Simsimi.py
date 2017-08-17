@@ -1,6 +1,16 @@
 # -*- coding: utf-8 -*-
+import sys
+import os
 import urllib2
 import json
+import hashlib
+import lxml
+import time
+import os
+import urllib2
+import json
+import re
+from lxml import etree
 def simsimi(ask):
     ask = ask.encode('UTF-8')
     enask = urllib2.quote(ask)
