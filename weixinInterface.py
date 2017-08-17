@@ -52,7 +52,7 @@ class WeixinInterface:
         mc = pylibmc.Client()
         #初始化一个memcache实例来保存用户的操作
         
-        if msgType == 'text':
+		if msgType == 'text':
             content=xml.find("Content").text
             if content.startswith('fk'):
         		fktime = time.strftime('%Y-%m-%d %H:%M',time.localtime())        
