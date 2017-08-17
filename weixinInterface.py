@@ -13,7 +13,7 @@ import pylibmc
 import DBmodel
 from DBmodel import dbOperation
 from lxml import etree
-os.environ['disable_fetchurl'] = "1"
+
 
 class WeixinInterface:
     
