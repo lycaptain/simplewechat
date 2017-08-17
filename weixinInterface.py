@@ -90,14 +90,15 @@ class WeixinInterface:
             	content = content.encode('UTF-8')
             Nword = translation.youdao(content)
             return self.render.reply_text(fromUser,toUser,int(time.time()), Nword)	         
+        
         elif msgType == 'image':
-            pass
-        elif msgType == 'event':
-            content = xml.find("Event").text
-            if content == 'subscribe':
-                replayText = u'欢迎关注本微信'
-                return self.render.reply_text(fromUser,toUser,int(time.time()), replayText)
-			
+        	pass
+       
+    	elif msgType == 'event':
+        	content = xml.find("Event").text
+        	if content == 'subscribe':
+            	replayText = u'欢迎关注本微信'
+            	return self.render.reply_text(fromUser,toUser,int(time.time()), replayText)			
             elif content == 'unsubscribe':
                 replayText = u'再见'
                	return self.render.reply_text(fromUser,toUser,int(time.time()), replayText)
