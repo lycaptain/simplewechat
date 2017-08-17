@@ -80,7 +80,7 @@ class WeixinInterface:
             
             if mcxhj == 'xhj':
                 res = Simsimi.simsimi(content)
-                resnum = res['result']
+                resnum = res['status']
                 if resnum == 100:
                 	reply_text = res['response']
                 else:
