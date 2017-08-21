@@ -15,10 +15,10 @@ def simsimi(ask):
     ask = ask.encode('UTF-8')
     enask = urllib2.quote(ask)
     send_headers = {
-    'Cookie':'dotcom_session_key=s%3A8W3ACqIiGX5WMBNLDEWj1OtwYcmduVlS.E4EHBpJgnHeqz7KFp5MdUlIHUggYblzDGI3gZG2e8Ck; normalProb=4; lc=ch; currentChatCnt=3; _ga=GA1.2.1265999218.1502948173; _gid=GA1.2.1301977380.1502948173; _gat=1'
+    'Cookie':'dotcom_session_key=s%3AGriOh4cD92ITF-VRRsY69PTGniBjNCpd.7KKLzK%2BURsCXZwhYNSCK%2FobHAawD2d8Gos1rgIyGIbQ; _gat=1; normalProb=0; lc=ch; _ga=GA1.2.952018532.1503307364; _gid=GA1.2.203362047.1503307364; currentChatCnt=8'
     }
-    baseurl = r'http://www.simsimi.com/getRealtimeReq?lc=ch&ft=1&normalProb=4&reqText='
-    url = baseurl + enask + u"&status=W&talkCnt=3"
+    baseurl = r'http://www.simsimi.com/getRealtimeReq?lc=ch&ft=1&normalProb=0&reqText='
+    url = baseurl + enask + u"&status=W&talkCnt=8"
     req = urllib2.Request(url,headers=send_headers)
     resp = urllib2.urlopen(req)
     reson = json.loads(resp.read())
