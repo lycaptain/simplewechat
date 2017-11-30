@@ -4,7 +4,7 @@ import MySQLdb
 class HtmlSql1(object):
      def db(self,res_data):
           # print(res_data[0])
-          self.con = MySQLdb.connect(host='127.0.0.1', user='root', passwd='123456', db='test', charset='utf8',
+          self.con = MySQLdb.connect(host='127.0.0.1', user='root', passwd='123456', db='app_simplewechat', charset='utf8',
                                      use_unicode=True)
           # res_data['url'] = res_data['url'].decode('utf8')
           # print(res_data['url'])
@@ -25,7 +25,7 @@ class HtmlSql1(object):
 class HtmlSql2(object):
     def db(self, res_data):
         # print(res_data[0])
-        self.con = MySQLdb.connect(host='127.0.0.1', user='root', passwd='123456', db='test', charset='utf8',
+        self.con = MySQLdb.connect(host='127.0.0.1', user='root', passwd='123456', db='app_simplewechat', charset='utf8',
                                    use_unicode=True)
         # res_data['url'] = res_data['url'].decode('utf8')
         # print(res_data['url'])
@@ -46,7 +46,7 @@ class HtmlSql3(object):
 
     def db(self, res_data):
         # print(res_data[0])
-        self.con = MySQLdb.connect(host='127.0.0.1', user='root', passwd='123456', db='test', charset='utf8',
+        self.con = MySQLdb.connect(host='127.0.0.1', user='root', passwd='123456', db='app_simplewechat', charset='utf8',
                                    use_unicode=True)
         # res_data['url'] = res_data['url'].decode('utf8')
         # print(res_data['url'])
@@ -67,7 +67,7 @@ class HtmlSql3(object):
 class HtmlSql4(object):
     def db(self, res_data):
         print(res_data[0])
-        self.con = MySQLdb.connect(host='127.0.0.1', user='root', passwd='123456', db='test', charset='utf8',
+        self.con = MySQLdb.connect(host='127.0.0.1', user='root', passwd='123456', db='app_simplewechat', charset='utf8',
                                    use_unicode=True)
         # res_data['url'] = res_data['url'].decode('utf8')
         # print(res_data['url'])
