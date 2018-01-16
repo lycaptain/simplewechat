@@ -1,0 +1,128 @@
+$def with (ccpcs, icpcs, ojs)
+<!-- Javascript goes in the document HEAD -->
+<script type="text/javascript">
+function altRows(id){
+	if(document.getElementsByTagName){
+
+		var table = document.getElementById(id);
+		var rows = table.getElementsByTagName("tr");
+
+		for(i = 0; i < rows.length; i++){
+			if(i % 2 == 0){
+				rows[i].className = "evenrowcolor";
+			}else{
+				rows[i].className = "oddrowcolor";
+			}
+		}
+	}
+}
+
+window.onload=function(){
+	altRows('alternatecolor');
+}
+</script>
+
+
+<!-- CSS goes in the document HEAD or added to your external stylesheet -->
+<style type="text/css">
+table {
+    border: 1px solid #ccc;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+table tr {
+    border: 1px solid #ddd;
+    padding: 5px;
+}
+table th,
+table td {
+    padding: 10px;
+    text-align: center;
+}
+table th {
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+/* <= 568px */
+@media screen and (max-width: 35.5em) {
+    table {
+        border: 0;
+    }
+    table thead {
+        display: none;
+    }
+    table tr {
+        margin-bottom: 10px;
+        display: block;
+        border-bottom: 2px solid #ddd;
+    }
+    table td {
+        display: block;
+        text-align: right;
+        font-size: 13px;
+        border-bottom: 1px dotted #ccc;
+    }
+    table td:last-child {
+        border-bottom: 0;
+    }
+    table td:before {
+        content: attr(data-label);
+        float: left;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+}
+.oddrowcolor{
+	background-color:#d4e3e5;
+}
+.evenrowcolor{
+	background-color:#c3dde0;
+}
+</style>
+
+<div id="alternatecolor">
+    <table class="altrowstable">
+        <caption>ccpc近期比赛详情
+<tr>
+    <th>test_writer</th><th>contest_area</th><th>live_contest</th>
+</tr>
+    $for ccpc in ccpcs:
+    <tr>
+                <td id="test_writer">$ccpc.test_writer</td>
+                <td id="contest_area">$ccpc.contest_area</td>
+                <td id="live_contest">$ccpc.live_contest</td>
+    </tr>
+</table>
+    <table class="altrowstable" >
+        <caption>icpc近期比赛详情
+    <tr>
+        <th>contest_area_url</th>
+        <th>contest_areas</th>
+        <th>live_time_sign</th>
+    </tr>
+    $for icpc in icpcs:
+    <tr>
+                <td id="contest_area_url">$icpc.contest_area_url</td>
+                <td id="contest_areas">$icpc.contest_area</td>
+                <td id="live_time_sign">$icpc.live_time_sign</td>
+    </tr>
+</table>
+    <table class="altrowstable" >
+        <caption>近期各大oj比赛详情
+    <tr>
+        <th>oj_name</th>
+        <th>contest_name</th>
+        <th>start_time</th>
+    </tr>
+    $for oj in ojs:
+    <tr>
+                <td id="oj_name">$oj.oj_name</td>
+                <td id="contest_name">$oj.contest_name</td>
+                <td id="start_time">$oj.start_time</td>
+    </tr>
+</table>
+</div>
