@@ -12,6 +12,3 @@ db = web.database(
     user=sae.const.MYSQL_USER,
     pw=sae.const.MYSQL_PASS
 )
-
-def get_ojcontent():
-    return db.select()
