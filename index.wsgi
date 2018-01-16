@@ -2,7 +2,6 @@
 import os
 import sae
 import web
-import DBmodel
 import model 
 from weixinInterface import WeixinInterface
 
