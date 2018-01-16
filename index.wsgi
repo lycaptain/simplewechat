@@ -12,14 +12,15 @@ class Hello:
     
 class feedback:
     def GET(self):
-        fkcon = DBmodel.get_fkcontent()
-        return render.checkfk(fkcon)
-    
+        ccpcs = db.select('ccpc_contest')
+        icpcs = db.select('icpc_contest')
+        ojs = db.select('oj_contest')
+        return render.ojfk(ccpcs, icpcs, ojs)
     
 urls = (
 '/', 'Hello',
 '/weixin','WeixinInterface',
-'/ck','feedback',
+'/ck','feedback',    
 )
 
 app_root = os.path.dirname(__file__)
