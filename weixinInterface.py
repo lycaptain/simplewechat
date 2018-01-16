@@ -11,7 +11,7 @@ import cxkd
 import Simsimi
 import translation
 import pylibmc
-import DBmodel
+import model
 from lxml import etree
 os.environ['disable_fetchurl'] = "1"
 
