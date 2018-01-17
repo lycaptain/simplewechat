@@ -1,4 +1,4 @@
-  # -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 import os
 import sae
 import web
@@ -19,7 +19,7 @@ class feedback:
 urls = (
 '/', 'Hello',
 '/weixin','WeixinInterface',
-'/ck','feedback',    
+'/oj','feedback',    
 )
 
 app_root = os.path.dirname(__file__)
