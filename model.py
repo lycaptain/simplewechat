@@ -5,10 +5,10 @@ import sae.const
 
 
 db = web.database(
-    dbn='mysql',
-    port=int(sae.const.MYSQL_PORT),
-    host=sae.const.MYSQL_HOST,
-    db=sae.const.MYSQL_DB,
-    user=sae.const.MYSQL_USER,
-    pw=sae.const.MYSQL_PASS
+	db_name = sae.const.MYSQL_DB
+    name = sae.const.MYSQL_USER
+    pwd = sae.const.MYSQL_PASS
+    host = sae.const.MYSQL_HOST
+    port = sae.const.MYSQL_PORT
+    host_s = sae.const.MYSQL_HOST_S
 )
