@@ -9,7 +9,7 @@ class Hello:
     def GET(self):
         return render.hello("hey")
     
-class index:
+class oj:
     def GET(self):
         ccpcs = db.select('ccpc_contest')
         icpcs = db.select('icpc_contest')
@@ -18,8 +18,8 @@ class index:
     
 urls = (
 '/oj', 'Hello',
-'/weixin','WeixinInterface',
-'/','index',    
+'/weixin', 'WeixinInterface',
+'/', 'oj',    
 )
 
 app_root = os.path.dirname(__file__)
