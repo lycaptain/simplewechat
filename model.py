@@ -5,7 +5,8 @@ import sae.const
 
 
 db = web.database(
-	dbn = 'app_simplewechat',
+	dbn = 'mysql',
+    db = 'app_simplewechat',
     user = sae.const.MYSQL_USER,
     pw = sae.const.MYSQL_PASS,
     host = sae.const.MYSQL_HOST,
