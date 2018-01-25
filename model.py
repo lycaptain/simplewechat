@@ -4,7 +4,7 @@ import web.db
 import sae.const
 
 
-dbn = web.database(
+db = web.database(
 	dbn = 'mysql',
     user = sae.const.MYSQL_USER,
     pwd = sae.const.MYSQL_PASS,
