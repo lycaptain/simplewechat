@@ -2,8 +2,18 @@
 import os
 import sae
 import web
-import model 
 from weixinInterface import WeixinInterface
+import web.db
+import sae.const
+
+
+db = web.database(
+	dbn = 'mysql',
+    user = sae.const.MYSQL_USER,
+    pwd = sae.const.MYSQL_PASS,
+    host = sae.const.MYSQL_HOST,
+    port=int(sae.const.MYSQL_PORT)
+)
 
 class Hello:
     def GET(self):
