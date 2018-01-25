@@ -2,10 +2,9 @@
 import os
 import sae
 import web
-import model 
 import web.db
 from weixinInterface import WeixinInterface
-
+from model import *
 
     
 urls = (
