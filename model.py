@@ -9,5 +9,5 @@ db = web.database(
     user = sae.const.MYSQL_USER,
     pwd = sae.const.MYSQL_PASS,
     host = sae.const.MYSQL_HOST,
-    port = sae.const.MYSQL_PORT
+    port=int(sae.const.MYSQL_PORT)
 )
