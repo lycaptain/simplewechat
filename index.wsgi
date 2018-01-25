@@ -20,9 +20,9 @@ class Hello:
     
 class oj:
     def GET(self):
-        ccpcs = db.select('ccpc_contest'),
-        icpcs = db.select('icpc_contest'),
-        ojs = db.select('oj_contest'),
+        ccpcs = db.select('ccpc_contest')
+        icpcs = db.select('icpc_contest')
+        ojs = db.select('oj_contest')
         return render.ojfk(ccpcs, icpcs, ojs)
     
 app_root = os.path.dirname(__file__)
