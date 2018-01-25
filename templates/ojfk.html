@@ -1,4 +1,4 @@
-$def with (ccpcs, icpcs, ojs)
+$def with (ojs)
 <!-- Javascript goes in the document HEAD -->
 <script type="text/javascript">
 function altRows(id){
@@ -85,34 +85,6 @@ table th {
 </style>
 <html>
 <div id="alternatecolor">
-    <table class="altrowstable">
-        <caption>ccpc近期比赛详情</caption>
-    <tr>
-    <th>test_writer</th><th>contest_area</th><th>live_contest</th>
-    </tr>
-        $for ccpc in ccpcs:
-        <tr>
-                <td id="test_writer">$ccpc.test_writer</td>
-                <td id="contest_area">$ccpc.contest_area</td>
-                <td id="live_contest">$ccpc.live_contest</td>
-        </tr>
-    </table>
-
-    <table class="altrowstable">
-        <caption>icpc近期比赛详情</caption>
-    <tr>
-        <th>contest_area_url</th>
-        <th>contest_areas</th>
-        <th>live_time_sign</th>
-    </tr>
-        $for icpc in icpcs:
-        <tr>
-                <td id="contest_area_url">$icpc.contest_area_url</td>
-                <td id="contest_areas">$icpc.contest_area</td>
-                <td id="live_time_sign">$icpc.live_time_sign</td>
-        </tr>
-    </table>
-
     <table class="altrowstable">
         <caption>近期各大oj比赛详情</caption>
     <tr>
