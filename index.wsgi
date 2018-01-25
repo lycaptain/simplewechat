@@ -9,15 +9,10 @@ from weixinInterface import WeixinInterface
 
     
 urls = (
-'/', 'Hello',
+'/', 'oj',    
 '/weixin', 'WeixinInterface',
-'/oj', 'oj',    
 )
 
-class Hello:
-    def GET(self):
-        return render.hello("hey")
-    
 class oj:
     def GET(self):
         ccpcs = db.select('ccpc_contest')
