@@ -56,7 +56,6 @@ class WeixinInterface:
         if msgType == 'text':
             content=xml.find("Content").text
             if content.startswith('oj'):
-                fktime = time.strftime('%Y-%m-%d %H:%M',time.localtime())  
                 return self.render.reply_text(fromUser,toUser,int(time.time()),u'www.1.simplewechat.applinzi.com/oj')
             if content[0:2] == u"快递":
                 post = str(content[2:])
