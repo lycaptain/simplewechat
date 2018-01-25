@@ -15,7 +15,7 @@ urls = (
 class oj:
     def GET(self):
         ojs = db.select('oj_contest')
-        return render.ojfk(ccpcs, icpcs, ojs)
+        return render.ojfk(ojs)
     
 app_root = os.path.dirname(__file__)
 templates_root = os.path.join(app_root, 'templates')
