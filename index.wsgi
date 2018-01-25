@@ -17,9 +17,9 @@ class oj:
         return render.ojfk(ccpcs, icpcs, ojs)
     
 urls = (
-'/oj', 'Hello',
+'/', 'Hello',
 '/weixin', 'WeixinInterface',
-'/', 'oj',    
+'/oj', 'oj',    
 )
 
 app_root = os.path.dirname(__file__)
