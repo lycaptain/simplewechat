@@ -15,17 +15,9 @@ urls = (
 
 class oj:
     def GET(self):
-        
         ojs = db.select('oj_contest')
         return render.ojfk(ojs)
 
-class update:
-    def GET(self):
-        status = '200 OK'
-        response_headers = [('Content-type','text/plain')]
-        write = start_response(status,response_headers)
- 		return ['Hello world']
-    
 app_root = os.path.dirname(__file__)
 templates_root = os.path.join(app_root, 'templates')
 render = web.template.render(templates_root)
