@@ -4,6 +4,7 @@ corn:
 - description: "更新数据库"
   url: /craw/spider_main4
   schedule: "*/5 * * * *"
+
 libraries:
 - name: webpy
   version: "0.36"
