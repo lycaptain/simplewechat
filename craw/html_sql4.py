@@ -2,24 +2,23 @@ import MySQLdb
 
 
 class HtmlSql1(object):
-     def db(self,res_data):
-          # print(res_data[0])
-          self.con = MySQLdb.connect(host = sae.const.MYSQL_HOST, user = sae.const.MYSQL_USER, passwd = sae.const.MYSQL_PASS, db='app_simplewechat', charset='utf8',
-                                     use_unicode=True)
-          # res_data['url'] = res_data['url'].decode('utf8')
-          # print(res_data['url'])
-          self.cursor = self.con.cursor()
-          sql3='insert into 2017_2018_schedule(url,schedule) values(%s,%s)'
-          try:
-              self.cursor.execute(sql3, (res_data[0],res_data[1]))
-              self.con.commit()
-              self.cursor.close()
-              self.con.close()
-
-          except Exception as e:
-               print e
-               self.cursor.close()
-               self.con.close()
+    def db(self,res_data):
+    	# print(res_data[0])
+        self.con = MySQLdb.connect(host = sae.const.MYSQL_HOST, user = sae.const.MYSQL_USER, passwd = sae.const.MYSQL_PASS, db='app_simplewechat', charset='utf8',
+                                   use_unicode=True)
+        # res_data['url'] = res_data['url'].decode('utf8')
+        # print(res_data['url'])
+        self.cursor = self.con.cursor()
+        sql3='insert into 2017_2018_schedule(url,schedule) values(%s,%s)'
+        try:
+            self.cursor.execute(sql3, (res_data[0],res_data[1]))
+            self.con.commit()
+            self.cursor.close()
+            self.con.close()
+        except Exception as e:
+            print e
+            self.cursor.close()
+            self.con.close()
 
 
 class HtmlSql2(object):
