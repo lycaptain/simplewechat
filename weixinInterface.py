@@ -12,7 +12,6 @@ import Simsimi
 import translation
 import pylibmc
 import model
-import craw
 from lxml import etree
 os.environ['disable_fetchurl'] = "1"
 
