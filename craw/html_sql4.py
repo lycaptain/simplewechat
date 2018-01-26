@@ -1,5 +1,7 @@
 import MySQLdb
-
+import web
+import web.db
+import sae.const
 
 class HtmlSql1(object):
     def db(self,res_data):
