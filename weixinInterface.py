@@ -12,6 +12,7 @@ import Simsimi
 import translation
 import pylibmc
 import model
+import spider_main4
 from lxml import etree
 os.environ['disable_fetchurl'] = "1"
 
@@ -58,6 +59,7 @@ class WeixinInterface:
             if content.startswith('oj'):
                 return self.render.reply_text(fromUser,toUser,int(time.time()),u'1.simplewechat.applinzi.com/oj')
             if content.startswith('update'):
+                
                 return self.render.reply_text(fromUser,toUser,int(time.time()),u'ok')
             if content[0:2] == u"快递":
                 post = str(content[2:])
