@@ -58,7 +58,7 @@ class WeixinInterface:
             content=xml.find("Content").text
             if content.startswith('oj'):
                 return self.render.reply_text(fromUser,toUser,int(time.time()),u'1.simplewechat.applinzi.com/oj')
-            if content.startswitch('update'):
+            if content[0:2] == u"update":
                 return self.render.reply_text(fromUser,toUser,int(time.time()),'ok')
             if content[0:2] == u"快递":
                 post = str(content[2:])
