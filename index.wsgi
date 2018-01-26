@@ -8,7 +8,7 @@ from model import *
 
     
 urls = (
-'/', 'oj',    
+'/oj', 'oj',    
 '/weixin', 'WeixinInterface',
 )
 
