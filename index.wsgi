@@ -5,18 +5,13 @@ import web
 import web.db
 from weixinInterface import WeixinInterface
 from model import *
-
+sae.add_vendor_dir('requests')
     
 urls = (
 '/oj', 'oj',    
 '/weixin', 'WeixinInterface',
  '/update','update',
 )
-
-class oj:
-    def GET(self):
-        ojs = db.select('oj_contest')
-        return render.ojfk(ojs)
 
 app_root = os.path.dirname(__file__)
 templates_root = os.path.join(app_root, 'templates')
