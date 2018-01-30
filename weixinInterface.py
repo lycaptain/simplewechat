@@ -7,7 +7,6 @@ import time
 import os
 import urllib2,json
 import json
-import Simsimi
 import translation
 import pylibmc
 import model
