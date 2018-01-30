@@ -59,14 +59,14 @@ class WeixinInterface:
         		return self.render.reply_text(fromUser,toUser,int(time.time()),replayText)
             elif content == u'oj':
                 oj_json = 'http://contests.acmicpc.info/contests.json'
-                OJ = json.loads(oj_json)
-                OJS = []
-                total_num = len(OJS)
+                oj = json.loads(oj_json)
+                ojs = []
+                total_num = len(ojs)
                 if total_num > 10:
                     num = 10
                 else:
                     num = total_num
-            	return self.render.reply_morepic(fromUser, toUser, OJS, num)
+            	return self.render.reply_morepic(fromUser, toUser, ojs, num)
             elif content[0:2] == u"快递":
                 post = str(content[2:])
                 kuaidi = cxkd.detect_com(post)
