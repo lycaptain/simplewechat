@@ -53,7 +53,7 @@ class WeixinInterface:
         return self.render.reply_text(fromUser,toUser,int(time.time()),u"我现在还在开发中，还没有什么功能，您刚才说的是："+content)
         mc = pylibmc.Client()
         #初始化一个memcache实例来保存用户的操作
-        
+        """
         if msgType == 'text':
             content = xml.find("Content").text
             if content == 'help':
@@ -111,6 +111,7 @@ class WeixinInterface:
             elif content == 'unsubscribe':
                 replayText = u'再见'
                 return self.render.reply_text(fromUser,toUser,int(time.time()), replayText)
+                """
             
             
             
