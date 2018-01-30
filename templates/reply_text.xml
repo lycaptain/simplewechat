@@ -1,17 +1,8 @@
-$def with (toUser, fromUser, dyxx, num)
-    <xml>
-        <ToUserName><![CDATA[$toUser]]></ToUserName>
-        <FromUserName><![CDATA[$fromUser]]></FromUserName>
-        <CreateTime>12345678</CreateTime>
-        <MsgType><![CDATA[news]]></MsgType>
-        <ArticleCount>$num</ArticleCount>
-        <Articles>
-            $for m in range(num):
-            <item>
-                    <Title>OJ:$dyxx[m][1]
-                        (name:$dyxx[m][3] starttime:$dyxx[m][4]</Title>
-            <Description>![CDATA[$dyxx[m][1]</Description>
-            <Url><![CDATA[$dyxx[m][2]]></Url>
-            </item>
-        </Articles>
-    </xml>
+$def with (toUser,fromUser,createTime,content)
+<xml>
+<ToUserName><![CDATA[$toUser]]></ToUserName>
+<FromUserName><![CDATA[$fromUser]]></FromUserName>
+<CreateTime>$createTime</CreateTime>
+<MsgType><![CDATA[text]]></MsgType>
+<Content><![CDATA[$content]]></Content>
+</xml>
