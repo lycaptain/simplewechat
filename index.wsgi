@@ -10,7 +10,6 @@ sae.add_vendor_dir('requests')
 urls = (
 '/oj', 'oj',    
 '/weixin', 'WeixinInterface',
- '/update','update',
 )
 
 app_root = os.path.dirname(__file__)
