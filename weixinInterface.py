@@ -10,7 +10,6 @@ import json
 import translation
 import pylibmc
 import model
-import spider_main4
 import requests
 from lxml import etree
 os.environ['disable_fetchurl'] = "1"
