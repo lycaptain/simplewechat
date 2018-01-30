@@ -8,7 +8,7 @@ from model import *
 sae.add_vendor_dir('requests')
     
 urls = (
-'/weixin', 'WeixinInterface',
+'/weixin', 'WeixinInterface'
 )
 
 app_root = os.path.dirname(__file__)
