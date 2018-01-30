@@ -5,7 +5,6 @@ import web
 import web.db
 from weixinInterface import WeixinInterface
 from model import *
-sae.add_vendor_dir('requests')
     
 urls = (
 '/weixin', 'WeixinInterface'
