@@ -11,12 +11,13 @@ import translation
 import pylibmc
 import model
 import requests
+import re
 from lxml import etree
 os.environ['disable_fetchurl'] = "1"
 
 class WeixinInterface:
     
-    def __init__(self):
+	def __init__(self):
         self.app_root = os.path.dirname(__file__)
         self.templates_root = os.path.join(self.app_root, 'templates')
         self.render = web.template.render(self.templates_root)
