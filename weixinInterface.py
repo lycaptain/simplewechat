@@ -56,10 +56,17 @@ class WeixinInterface:
         
         if msgType == 'text':
             content=xml.find("Content").text
-            if content.startswith('oj'):
-                return self.render.reply_text(fromUser,toUser,int(time.time()),u'1.simplewechat.applinzi.com/oj')
-            if content.startswith('update'):
-                
+            if content == u'oj':
+                oj_json = 'http://contests.acmicpc.info/contests.json'
+                OJ = json.loads(oj_json)
+                OJS = []
+                total_num = len(OJS)
+                if total_num > 10:
+                    num = 10
+                else:
+                    num = total_num
+            	return self.render.reply_morepic(fromUser, toUser, OJS, num)
+            if content.startswith('update'):    
                 return self.render.reply_text(fromUser,toUser,int(time.time()),u'ok')
             if content[0:2] == u"快递":
                 post = str(content[2:])
@@ -76,7 +83,7 @@ class WeixinInterface:
                		replayText = u'''1.输入快递+单号（不含‘+’）查询该快递属于哪一个公司\n2.输入xhj进入调戏小黄鸡模式，输入bye离开小黄鸡\n3.输入其它则进入翻译模式
 4 输入 fk空格+反馈内容即可反馈'''
                 	return self.render.reply_text(fromUser,toUser,int(time.time()),replayText)
-
+          
             #读取mcmcache数据
             mcxhj = mc.get(fromUser+'_xhj')
             
