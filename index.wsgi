@@ -8,7 +8,6 @@ from model import *
 sae.add_vendor_dir('requests')
     
 urls = (
-'/oj', 'oj',    
 '/weixin', 'WeixinInterface',
 )
 
