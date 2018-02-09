@@ -1,4 +1,4 @@
-$def withh (toUser, fromUser, dyxx, num)
+$def with (toUser, fromUser, dyxx, num)
     <xml>
         <ToUserName><![CDATA[$toUser]]></ToUserName>
         <FromUserName><![CDATA[$fromUser]]></FromUserName>
