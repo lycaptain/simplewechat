@@ -6,7 +6,6 @@ import time
 import os
 import urllib2,json
 from lxml import etree
-
 import urllib,urllib2
 import json
 import pylibmc
