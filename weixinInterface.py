@@ -48,6 +48,19 @@ class WeixinInterface:
         msgType=xml.find("MsgType").text
         fromUser=xml.find("FromUserName").text
         toUser=xml.find("ToUserName").text
+        if content == 'oj':
+            oj_url = 'http://contests.acmicpc.info/contests.json'
+            OJ_json = requests.get(oj_url).text
+            OJ = json.loads(OJ_json)
+            OJS = []
+            for oj in OJ:
+                OJS.append((oj['oj'],oj['name'],oj['start_time']))
+            total_num = len(OJS)
+            if total_num>10:
+                num = 10
+            else:
+                num = total_num
+            return self.render.reply_morepic(fromUser,toUser,OJS,num)
         return self.render.reply_text(fromUser,toUser,int(time.time()),u"我现在还在开发中，还没有什么功能，您刚才说的l是："+content)
             
             
