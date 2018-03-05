@@ -10,9 +10,7 @@ $def with (toUser,fromUser,dyxx,num)
             <item>
             	<Title>
                 	oj:$dyxx[m][0]
-                    name:$dyxx[m][1]
-                    starttime:$dyxx[m][2]
-                </Title>
+                    (name:$dyxx[m][1] starttime:$dyxx[m][2])</Title>
             </item>
         </Articles>
     </xml>
