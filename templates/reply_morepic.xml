@@ -8,11 +8,11 @@ $def with (toUser,fromUser,dyxx,num)
         <Articles>
             $for m in range(num):
             <item>
-                    <Title>
-                         oj:$dyxx[m][0]
-                         name:$dyxx[m][1]
-                         starttime:$dyxx[m][2]
-                    </Title>
+            	<Title>
+                	oj:$dyxx[m][0]
+                    name:$dyxx[m][1]
+                    starttime:$dyxx[m][2]
+                </Title>
             </item>
         </Articles>
     </xml>
