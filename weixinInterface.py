@@ -60,7 +60,7 @@ class WeixinInterface:
                 num = 10
             else:
                 num = total_num
-            if OJS[0][0] == 'ZJU':
+            if OJS[0][0] == 'ZU':
                 return self.render.reply_text(fromUser,toUser,int(time.time()),u"我现在还在开发中，还没有什么功能，您刚才说的l是："+'yes')
             else:
                 return self.render.reply_text(fromUser,toUser,int(time.time()),u"我现在还在开发中，还没有什么功能，您刚才说的l是："+'no')
