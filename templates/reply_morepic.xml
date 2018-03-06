@@ -9,7 +9,7 @@ $def with (toUser,fromUser,dyxx,num)
 	$for m in range(num):
     	<item>
         	<Title>$(m+1):$dyxx[m][1]
-        ($dyxx[m][2])</Title>
+    ($dyxx[m][2])</Title>
         	<Description><![CDATA[description]]></Description>
         	<PicUrl><![CDATA[picurl]]></PicUrl>
         	<Url><![CDATA[$dyxx[m][3]]]></Url>
