@@ -7,6 +7,6 @@ $def with (toUser,fromUser,dyxx,num)
 <Content>
     $for m in range(num):
     	<![CDATA[OJ:$dyxx[m][0]
-        (名字:$dyxx[m][1] 开始时间:$dyxx[m][2])]]>
+        $dyxx[m][1] 开始时间:$dyxx[m][2]]]>
 </Content>
 </xml>
