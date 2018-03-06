@@ -56,8 +56,8 @@ class WeixinInterface:
             for oj in OJ:
                 OJS.append((oj['oj'], oj['name'], oj['start_time'], oj['link']))
             total_num = len(OJS)
-            if total_num>10:
-                num = 10
+            if total_num>5:
+                num = 5
             else:
                 num = total_num
             return self.render.reply_morepic(fromUser,toUser,OJS,num)
