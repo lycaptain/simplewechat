@@ -5,9 +5,9 @@ $def with (toUser,fromUser,dyxx,num)
 <CreateTime>12345678</CreateTime>
 <MsgType><![CDATA[text]]></MsgType>
 <Content>近期oj赛事如下：
-    $for m in range(num):
-    	$(m+1):OJ:$dyxx[m][0]
-    	$dyxx[m][1] 
-    	开始时间:$dyxx[m][2]
+$for m in range(num):
+    $(m+1):OJ:$dyxx[m][0]
+    $dyxx[m][1] 
+   	开始时间:$dyxx[m][2]
 </Content>
 </xml>
