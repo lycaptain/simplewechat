@@ -13,7 +13,7 @@ $def with (toUser,fromUser,dyxx,num)
 		开始时间:$dyxx[m][2]</Title>
         	<Description><![CDATA[description]]></Description>
         	<PicUrl><![CDATA[picurl]]></PicUrl>
-        	<Url><![CDATA[url]]></Url>
+        	<Url><![CDATA[$dyxx[m][3]]></Url>
     	</item>
 </Articles>
 </xml>
