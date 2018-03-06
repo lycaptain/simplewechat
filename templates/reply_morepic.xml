@@ -4,8 +4,7 @@ $def with (toUser,fromUser,dyxx,num)
 <FromUserName><![CDATA[$fromUser]]></FromUserName>
 <CreateTime>12345678</CreateTime>
 <MsgType><![CDATA[text]]></MsgType>
-<Content>
-    $for m in range(num):
+<Content>$for m in range(num):
     	$(m+1):OJ:$dyxx[m][0]
     	$dyxx[m][1] 
     	开始时间:$dyxx[m][2]
