@@ -54,7 +54,7 @@ class WeixinInterface:
             OJ = json.loads(OJ_json)
             OJS = []
             for oj in OJ:
-                OJS.append((oj['oj'], oj['name'], oj['start_time']))
+                OJS.append((oj['oj'], oj['name'], oj['start_time'], oj['link']))
             total_num = len(OJS)
             if total_num>5:
                 num = 5
