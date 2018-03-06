@@ -4,7 +4,7 @@ $def with (toUser,fromUser,dyxx,num)
 <FromUserName><![CDATA[$fromUser]]></FromUserName>
 <CreateTime>12345678</CreateTime>
 <MsgType><![CDATA[text]]></MsgType>
-<Content>
+<Content>近期oj赛事如下：
     $for m in range(num):
     	$(m+1):OJ:$dyxx[m][0]
     	$dyxx[m][1] 
