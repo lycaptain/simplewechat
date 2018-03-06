@@ -6,7 +6,7 @@ $def with (toUser,fromUser,dyxx,num)
 <MsgType><![CDATA[text]]></MsgType>
 <Content>
     $for m in range(num):
-    	OJ:$dyxx[m][0]
+    	m:OJ:$dyxx[m][0]
     	$dyxx[m][1] 开始时间:$dyxx[m][2]
 </Content>
 </xml>
