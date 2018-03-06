@@ -6,15 +6,15 @@ $def with (toUser,fromUser,dyxx,num)
 <MsgType><![CDATA[news]]></MsgType>
 <ArticleCount>$num</ArticleCount>
 <Articles>
-$for m in range(num):
-    <item>
-        <Title>
+	$for m in range(num):
+    	<item>
+        	<Title>
     		$(m+1):OJ:$dyxx[m][0]
     		$dyxx[m][1] 
             开始时间:$dyxx[m][2]</Title>
-        <Description><![CDATA[description]]></Description>
-        <PicUrl><![CDATA[picurl]]></PicUrl>
-        <Url><![CDATA[url]]></Url>
-     </item>
-    </Articles>
+        	<Description><![CDATA[description]]></Description>
+        	<PicUrl><![CDATA[picurl]]></PicUrl>
+        	<Url><![CDATA[url]]></Url>
+    	</item>
+</Articles>
 </xml>
