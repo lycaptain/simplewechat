@@ -12,9 +12,9 @@ $for m in range(num):
     		$(m+1):OJ:$dyxx[m][0]
     		$dyxx[m][1] 
             开始时间:$dyxx[m][2]</Title>
-        <Description></Description>
-        <PicUrl></PicUrl>
-        <Url></Url>
+        <Description><![CDATA[description]]></Description>
+        <PicUrl><![CDATA[picurl]]></PicUrl>
+        <Url><![CDATA[url]]></Url>
      </item>
     </Articles>
 </xml>
