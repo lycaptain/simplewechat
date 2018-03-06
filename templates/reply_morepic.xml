@@ -10,7 +10,7 @@ $def with (toUser,fromUser,dyxx,num)
     	<item>
         	<Title>
 	OJ:$dyxx[m][0] $dyxx[m][1] 
-		开始时间:$dyxx[m][2]</Title>
+	(开始时间:$dyxx[m][2])</Title>
         	<Description><![CDATA[description]]></Description>
         	<PicUrl><![CDATA[picurl]]></PicUrl>
         	<Url><![CDATA[$dyxx[m][3]]]></Url>
