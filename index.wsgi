@@ -18,8 +18,8 @@ render = web.template.render(templates_root)
 app = web.application(urls, globals()).wsgifunc()        
 application = sae.create_wsgi_app(app)   
 def token(requset):  
-    url = 'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=%s&secret=%s' % (Config.AppID, Config.AppSecret)  
-   	result = urllib2.urlopen(url).read()  
+    url = 'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=%s&secret=%s' % (Config.AppID, Config.AppSecret)
+	result = urllib2.urlopen(url).read()  
    	Config.access_token = json.loads(result).get('access_token')  
    	print 'access_token===%s' % Config.access_token  
    	return HttpResponse(result)
