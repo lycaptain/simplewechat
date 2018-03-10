@@ -13,6 +13,23 @@ import model
 import requests
 import re
 os.environ['disable_fetchurl'] = "1"
+def token(requset):  
+   	url = 'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=%s&secret=%s' % (  
+    Config.AppID, Config.AppSecret)  
+    result = urllib2.urlopen(url).read()  
+    Config.access_token = json.loads(result).get('access_token')  
+    print 'access_token===%s' % Config.access_token  
+    return HttpResponse(result)
+    
+def createMenu(request):  
+    url = "https://api.weixin.qq.com/cgi-bin/menu/create?access_token=%s" % Config.access_toke
+    data = {"button":[{"name":"sm","sub_button":[{"type":"click","name":"shengming","key":"sm"}]}]}
+    req = urllib2.Request(url)
+    req.add_header('Content-Type', 'application/json')
+    req.add_header('encoding', 'utf-8')
+    response = urllib2.urlopen(req, json.dumps(data,ensure_ascii=False))
+    result = response.read()
+    return HttpResponse(result)
 
 class WeixinInterface:
     def __init__(self):
