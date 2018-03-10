@@ -85,7 +85,7 @@ class WeixinInterface:
                				"key":"meitu"  
             			}]  
  				}
-		req = urllib2.Request(url)  
+		req = urllib2.Request(url)
     	req.add_header('Content-Type', 'application/json')  
     	req.add_header('encoding', 'utf-8')  
     	response = urllib2.urlopen(req, json.dumps(data,ensure_ascii=False))  
