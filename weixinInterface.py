@@ -84,7 +84,7 @@ class WeixinInterface:
                		"name":"美图",  
                		"key":"meitu"  
             	}]  
-        	}
+ 	}
     	#data = json.loads(data)  
     	#data = urllib.urlencode(data)  
     	req = urllib2.Request(url)  
