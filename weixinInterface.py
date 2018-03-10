@@ -75,17 +75,17 @@ class WeixinInterface:
     def createMenu(request):  
     	url = "https://api.weixin.qq.com/cgi-bin/menu/create?access_token=%s" % Config.access_token  
     	data = {  
-     		"button":[  
-      		{  
-        		"name":"看美图",  
-         		"sub_button":[  
-        		{  
-               		"type":"click",  
-               		"name":"美图",  
-               		"key":"meitu"  
-            	}]  
- 	}
-    	req = urllib2.Request(url)  
+     				"button":[  
+      				{  
+        				"name":"看美图",  
+         				"sub_button":[  
+        				{  
+               				"type":"click",  
+               				"name":"美图",  
+               				"key":"meitu"  
+            			}]  
+ 				}
+		req = urllib2.Request(url)  
     	req.add_header('Content-Type', 'application/json')  
     	req.add_header('encoding', 'utf-8')  
     	response = urllib2.urlopen(req, json.dumps(data,ensure_ascii=False))  
