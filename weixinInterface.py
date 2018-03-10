@@ -64,6 +64,35 @@ class WeixinInterface:
         else:
             return self.render.reply_text(fromUser,toUser,int(time.time()),u"我现在还在开发中，还没有什么功能，您刚才说的l是："+content)
             
+    def token(requset):  
+    	url = 'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=%s&secret=%s' % (  
+    	Config.AppID, Config.AppSecret)  
+    	result = urllib2.urlopen(url).read()  
+    	Config.access_token = json.loads(result).get('access_token')  
+    	print 'access_token===%s' % Config.access_token  
+    	return HttpResponse(result)
+    
+    def createMenu(request):  
+    	url = "https://api.weixin.qq.com/cgi-bin/menu/create?access_token=%s" % Config.access_token  
+    	data = {  
+     		"button":[  
+      		{  
+        		"name":"看美图",  
+         		"sub_button":[  
+        		{  
+               		"type":"click",  
+               		"name":"美图",  
+               		"key":"meitu"  
+            	}]  
+        	}
+    	#data = json.loads(data)  
+    	#data = urllib.urlencode(data)  
+    	req = urllib2.Request(url)  
+    	req.add_header('Content-Type', 'application/json')  
+    	req.add_header('encoding', 'utf-8')  
+    	response = urllib2.urlopen(req, json.dumps(data,ensure_ascii=False))  
+    	result = response.read()  
+    	return HttpResponse(result)
         
             
             
