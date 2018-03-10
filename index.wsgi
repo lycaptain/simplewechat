@@ -6,17 +6,6 @@ import web.db
 from weixinInterface import WeixinInterface
 from model import *
     
-urls = (
-'/weixin', 'WeixinInterface'
-)
-
-app_root = os.path.dirname(__file__)
-templates_root = os.path.join(app_root, 'templates')
-render = web.template.render(templates_root)
-
-
-app = web.application(urls, globals()).wsgifunc()        
-application = sae.create_wsgi_app(app)   
 def token(requset):  
     url = 'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=%s&secret=%s' % (
     Config.AppID, Config.AppSecret)
@@ -35,7 +24,17 @@ def createMenu(request):
     result = response.read()
     return HttpResponse(result)   
     
-    
+urls = (
+'/weixin', 'WeixinInterface'
+)
+
+app_root = os.path.dirname(__file__)
+templates_root = os.path.join(app_root, 'templates')
+render = web.template.render(templates_root)
+
+
+app = web.application(urls, globals()).wsgifunc()        
+application = sae.create_wsgi_app(app)    
     
     
     
