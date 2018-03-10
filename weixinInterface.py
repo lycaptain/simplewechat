@@ -85,8 +85,6 @@ class WeixinInterface:
                		"key":"meitu"  
             	}]  
  	}
-    	#data = json.loads(data)  
-    	#data = urllib.urlencode(data)  
     	req = urllib2.Request(url)  
     	req.add_header('Content-Type', 'application/json')  
     	req.add_header('encoding', 'utf-8')  
