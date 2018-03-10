@@ -84,12 +84,18 @@ class WeixinInterface:
                				"name":"美图",  
                				"key":"meitu"  
             			}]  
- 				}
+ }
+                        
 		req = urllib2.Request(url)
-    	req.add_header('Content-Type', 'application/json')  
-    	req.add_header('encoding', 'utf-8')  
-    	response = urllib2.urlopen(req, json.dumps(data,ensure_ascii=False))  
-    	result = response.read()  
+                        
+    	req.add_header('Content-Type', 'application/json')
+                        
+    	req.add_header('encoding', 'utf-8')
+                        
+    	response = urllib2.urlopen(req, json.dumps(data,ensure_ascii=False))
+                        
+    	result = response.read()
+                        
     	return HttpResponse(result)
         
             
