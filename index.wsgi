@@ -20,10 +20,10 @@ application = sae.create_wsgi_app(app)
 def token(requset):  
     url = 'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=%s&secret=%s' % (
     Config.AppID, Config.AppSecret)
-	result = urllib2.urlopen(url).read()  
-   	Config.access_token = json.loads(result).get('access_token')  
-   	print 'access_token===%s' % Config.access_token  
-   	return HttpResponse(result)
+    result = urllib2.urlopen(url).read()
+    Config.access_token = json.loads(result).get('access_token')
+    print 'access_token===%s' % Config.access_token
+    return HttpResponse(result)
     
 def createMenu(request):
     url = "https://api.weixin.qq.com/cgi-bin/menu/create?access_token=%s" % Config.access_toke
