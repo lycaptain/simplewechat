@@ -14,24 +14,6 @@ import requests
 import re
 os.environ['disable_fetchurl'] = "1"
 
-def token(requset):  
-	url = 'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=%s&secret=%s' % (
-	Config.AppID, Config.AppSecret)
-	result = urllib2.urlopen(url).read()
-	Config.access_token = json.loads(result).get('access_token')
-	print 'access_token===%s' % Config.access_token
-	return HttpResponse(result)
-    
-def createMenu(request):  
-    url = "https://api.weixin.qq.com/cgi-bin/menu/create?access_token=%s" % Config.access_toke
-    data = {"button":[{"name":"sm","sub_button":[{"type":"click","name":"shengming","key":"sm"}]}]}
-    req = urllib2.Request(url)
-    req.add_header('Content-Type', 'application/json')
-    req.add_header('encoding', 'utf-8')
-    response = urllib2.urlopen(req, json.dumps(data,ensure_ascii=False))
-    result = response.read()
-    return HttpResponse(result)
-
 class WeixinInterface:
     def __init__(self):
         self.app_root = os.path.dirname(__file__)
@@ -41,18 +23,18 @@ class WeixinInterface:
     def GET(self):
         #获取输入参数
         data = web.input()
-        signature=data.signature
-        timestamp=data.timestamp
-        nonce=data.nonce
-        echostr=data.echostr
+        signature = data.signature
+        timestamp = data.timestamp
+        nonce = data.nonce
+        echostr = data.echostr
         #自己的token
-        token="anmmd" #这里改写你在微信公众平台里输入的token
+        token = "anmmd" #这里改写你在微信公众平台里输入的token
         #字典序排序
-        list=[token,timestamp,nonce]
+        list = [token, timestamp, nonce]
         list.sort()
-        sha1=hashlib.sha1()
-        map(sha1.update,list)
-        hashcode=sha1.hexdigest()
+        sha1 = hashlib.sha1()
+        map(sha1.update, list)
+        hashcode = sha1.hexdigest()
         #sha1加密算法        
 
         #如果是来自微信的请求，则回复echostr
@@ -61,117 +43,17 @@ class WeixinInterface:
 	
     def POST(self):        
         str_xml = web.data() #获得post来的数据
-        xml = etree.fromstring(str_xml)#进行XML解析
-        content=xml.find("Content").text#获得用户所输入的内容
-        msgType=xml.find("MsgType").text
-        fromUser=xml.find("FromUserName").text
-        toUser=xml.find("ToUserName").text
+        xml = etree.fromstring(str_xml)  #进行XML解析
+        content = xml.find("Content").text  #获得用户所输入的内容
+        msgType = xml.find("MsgType").text
+        fromUser = xml.find("FromUserName").text
+        toUser = xml.find("ToUserName").text
         if content == 'oj':
-            oj_url = 'http://contests.acmicpc.info/contests.json'
-            OJ_json = requests.get(oj_url).text
-            OJ = json.loads(OJ_json)
-            OJS = []
-            for oj in OJ:
-                OJS.append((oj['oj'], oj['name'], oj['start_time'], oj['link']))
-            total_num = len(OJS)
-            if total_num>8:
+            OJS = model.get_ojmessage()
+            if total_num > 8:
                 num = 8
             else:
                 num = total_num
-            return self.render.reply_morepic(fromUser,toUser,OJS,num)
+            return self.render.reply_morepic(fromUser, toUser, OJS, num)
         else:
-            return self.render.reply_text(fromUser,toUser,int(time.time()),u"我现在还在开发中，还没有什么功能，您刚才说的l是："+content)
-            
-    def token(requset):  
-    	url = 'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=%s&secret=%s' % (  
-    	Config.AppID, Config.AppSecret)  
-    	result = urllib2.urlopen(url).read()  
-    	Config.access_token = json.loads(result).get('access_token')  
-    	print 'access_token===%s' % Config.access_token  
-    	return HttpResponse(result)
-    
-    def createMenu(request):  
-    	url = "https://api.weixin.qq.com/cgi-bin/menu/create?access_token=%s" % Config.access_toke
-        data = {"button":[{"name":"sm","sub_button":[{"type":"click","name":"shengming","key":"sm"}]}]}
-        req = urllib2.Request(url)
-        req.add_header('Content-Type', 'application/json')
-        req.add_header('encoding', 'utf-8')
-        response = urllib2.urlopen(req, json.dumps(data,ensure_ascii=False))
-        result = response.read()
-        return HttpResponse(result)            
-		
-                   
-                        
-		
-                        
-    	
-                        
-    	
-                        
-    	
-                        
-    	
-                        
-    	
-        
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-         
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
+            return self.render.reply_text(fromUser, toUser, int(time.time()), u"我现在还在开发中，还没有什么功能，您刚才说的l是："+content)

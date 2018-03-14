@@ -6,3 +6,8 @@ libraries:
 
 - name: lxml
   version: "2.3.4"
+cron:
+    - description: update_recentoj
+          url: updatesql.py
+          schedule: midnight
+          timezone: Beijing
