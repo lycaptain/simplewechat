@@ -1,5 +1,5 @@
 name: simplewechat
-version: 1
+version: 2
 libraries:
 - name: webpy
   version: "0.36"
